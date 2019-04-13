@@ -188,6 +188,9 @@ public class Window extends javax.swing.JFrame {
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jRadioButton1, jRadioButton2, jRadioButton3});
 
+        jPanel1.setOpaque(true);
+        jPanel1.setBackground(Color.white);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
