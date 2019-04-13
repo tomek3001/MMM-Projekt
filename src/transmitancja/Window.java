@@ -222,16 +222,10 @@ public class Window extends javax.swing.JFrame {
         Graphics g = jPanel1.getGraphics();
         super.paintComponents(g);
         g.setColor(Color.white);        //zmiana koloru malowania na biały to zrobienia tła
-        g.fillRect(0, 0, jPanel1.getWidth(), jPanel1.getHeight());    //"czyszczenie", malowanie tła
+        g.fillRect(2, 2, jPanel1.getWidth()-2, jPanel1.getHeight()-2);    //"czyszczenie", malowanie tła jak będzie czas to można to zrobic lepiej
         g.setColor(Color.black);        //przywrócenie pędzlowi czarnego koloru
-        //jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, null, null, java.awt.Color.lightGray));
-        //jPanel1.setOpaque(true);
-        //g.clearRect(0, 0, jPanel1.getWidth(), jPanel1.getHeight());
-        //jPanel1.removeAll();
-        //jPanel1.updateUI();
         g.drawLine(20, jPanel1.getHeight()/2, jPanel1.getWidth(), jPanel1.getHeight()/2);  //rysowanie linii poziomej - osi x
         g.drawString("0", 10, jPanel1.getHeight()/2+5);                                    //oraz oznaczenie "0"
-        
         String probes = jTextField1.getText();              //pobieranie
         try{                                                //
         int temp = Integer.parseInt(probes);                //oraz konwertowanie wartości długośći sygnału ze stringa na inta
@@ -351,4 +345,3 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
-//Ala ma kota a kuba bawi się git
