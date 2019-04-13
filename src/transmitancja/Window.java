@@ -280,9 +280,11 @@ public class Window extends javax.swing.JFrame {
                                 y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwa2.get(a) );
                                 System.out.println(a-1 + " " + ((jPanel1.getHeight()/2) - y1) + " " +  a + " " + ((jPanel1.getHeight()/2) - y2 ));
                                 
-                                    if (a%50 == 0)
-                                    g.drawLine(a + 20, (jPanel1.getHeight()/2) - y1, a + 20, (jPanel1.getHeight()/2) - y2);  //łączenie dwóch punktów o tej samej współrzędniej x - pionowa kreska przy zmianie stanu
-                                    else g.drawLine(a-1 + 20, (jPanel1.getHeight()/2) - y1, a + 20, (jPanel1.getHeight()/2) - y2);
+                                    if ( a == 1 )
+                                        g.drawLine(a + 20, jPanel1.getHeight()/2, a + 20, (jPanel1.getHeight()/2) - y2);
+                                        if (a%50 == 0)
+                                        g.drawLine(a + 20, (jPanel1.getHeight()/2) - y1, a + 20, (jPanel1.getHeight()/2) - y2);  //łączenie dwóch punktów o tej samej współrzędniej x - pionowa kreska przy zmianie stanu
+                                        else g.drawLine(a-1 + 20, (jPanel1.getHeight()/2) - y1, a + 20, (jPanel1.getHeight()/2) - y2);
                                     
                                 if(jCheckBoxAnimacja.isSelected())
                                 animuj.Animacja();
