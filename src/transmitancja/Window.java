@@ -45,6 +45,11 @@ public class Window extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jCheckBoxAnimacja = new javax.swing.JCheckBox();
+        a0Param = new javax.swing.JTextField();
+        a1Param = new javax.swing.JTextField();
+        b0Param = new javax.swing.JTextField();
+        b1Param = new javax.swing.JTextField();
+        b2Param = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -123,6 +128,36 @@ public class Window extends javax.swing.JFrame {
 
         jCheckBoxAnimacja.setText("Animacja");
 
+        a0Param.setText("1");
+        a0Param.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                a0ParamActionPerformed(evt);
+            }
+        });
+
+        a1Param.setText("1");
+        a1Param.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                a1ParamActionPerformed(evt);
+            }
+        });
+
+        b0Param.setText("1");
+
+        b1Param.setText("1");
+        b1Param.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b1ParamActionPerformed(evt);
+            }
+        });
+
+        b2Param.setText("1");
+        b2Param.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b2ParamActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -144,9 +179,20 @@ public class Window extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2))
-                        .addGap(242, 242, 242)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jRadioButton1)
+                                    .addComponent(jRadioButton2))
+                                .addGap(242, 242, 242))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(132, 132, 132)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(b0Param, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(b2Param, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(b1Param, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(a1Param, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(a0Param, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -161,29 +207,42 @@ public class Window extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(154, Short.MAX_VALUE)
-                        .addComponent(jRadioButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1)
-                        .addGap(6, 6, 6)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBoxAnimacja))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap(198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel1)
+                                .addGap(6, 27, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap(160, Short.MAX_VALUE)
+                                .addComponent(jRadioButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCheckBoxAnimacja)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(a0Param, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)
+                        .addComponent(a1Param, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(b0Param, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(b1Param, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(b2Param, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jRadioButton1, jRadioButton2, jRadioButton3});
@@ -217,7 +276,7 @@ public class Window extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        String[] parameters = new String[5];
         Animacja animuj = new Animacja();
         Graphics g = jPanel1.getGraphics();
         super.paintComponents(g);
@@ -227,9 +286,15 @@ public class Window extends javax.swing.JFrame {
         g.drawLine(20, jPanel1.getHeight()/2, jPanel1.getWidth(), jPanel1.getHeight()/2);  //rysowanie linii poziomej - osi x
         g.drawString("0", 10, jPanel1.getHeight()/2+5);                                    //oraz oznaczenie "0"
         String probes = jTextField1.getText();              //pobieranie
+
         try{                                                //
         int temp = Integer.parseInt(probes);                //oraz konwertowanie wartości długośći sygnału ze stringa na inta
-        
+        Transmitancja transform = new Transmitancja();
+        transform.getParameters(a0Param.getText(), 0);
+        transform.getParameters(a1Param.getText(), 1);
+        transform.getParameters(b0Param.getText(), 2);
+        transform.getParameters(b1Param.getText(), 3);
+        transform.getParameters(b2Param.getText(), 4);
             if (temp>jPanel1.getWidth())        //ograniczenie długości generowanego 
                 temp = jPanel1.getWidth();      //sygnału do szerokośći okna
         
@@ -240,11 +305,23 @@ public class Window extends javax.swing.JFrame {
                 Sinus element = new Sinus(temp);
                 element.generateSinus();
                     for (int a=1; a <= temp - 1; a++){
-                        System.out.println(a);
-                        int y1=0, y2=0;
+                       // System.out.println(a);
+                        int y1, y2;
                         y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwa.get(a-1) );
                         y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwa.get(a) );
-                        System.out.println(a-1 + " " + ((jPanel1.getHeight()/2) - y1) + " " +  a + " " + ((jPanel1.getHeight()/2) - y2 ));
+                     //   System.out.println(a-1 + " " + ((jPanel1.getHeight()/2) - y1) + " " +  a + " " + ((jPanel1.getHeight()/2) - y2 ));
+                        g.drawLine(a-1 + 20, (jPanel1.getHeight()/2) - y1, a + 20, (jPanel1.getHeight()/2) - y2);
+                        if(jCheckBoxAnimacja.isSelected())
+                        animuj.Animacja();
+                    }
+                    element.sinusTransformation(1, 1, 1, 1, 1);
+                   for (int a=1; a <= temp - 1; a++){
+                       // System.out.println(a);
+                        int y1, y2;
+                        y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a-1) );
+                        y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a) );
+                        System.out.println(y1 + "     " + y2);
+                     //   System.out.println(a-1 + " " + ((jPanel1.getHeight()/2) - y1) + " " +  a + " " + ((jPanel1.getHeight()/2) - y2 ));
                         g.drawLine(a-1 + 20, (jPanel1.getHeight()/2) - y1, a + 20, (jPanel1.getHeight()/2) - y2);
                         if(jCheckBoxAnimacja.isSelected())
                         animuj.Animacja();
@@ -255,11 +332,11 @@ public class Window extends javax.swing.JFrame {
                         Triangle element = new Triangle(temp);
                         element.generateTriangle(); 
                                 for (int a=1; a <= temp - 1; a++){
-                                System.out.println(a);
+                               // System.out.println(a);
                                 int y1, y2;
                                 y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwa2.get(a-1) );
                                 y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwa2.get(a) );
-                                System.out.println(a-1 + " " + ((jPanel1.getHeight()/2) - y1) + " " +  a + " " + ((jPanel1.getHeight()/2) - y2 ));
+                             //   System.out.println(a-1 + " " + ((jPanel1.getHeight()/2) - y1) + " " +  a + " " + ((jPanel1.getHeight()/2) - y2 ));
                                 g.drawLine(a-1 + 20, (jPanel1.getHeight()/2) - y1, a + 20, (jPanel1.getHeight()/2) - y2);
                                 if(jCheckBoxAnimacja.isSelected())
                                 animuj.Animacja();
@@ -271,11 +348,11 @@ public class Window extends javax.swing.JFrame {
                         Square element = new Square(temp);
                         element.generateSquare(); 
                                 for (int a=1; a <= temp - 1; a++){
-                                System.out.println(a);
-                                int y1=0, y2=0;
+                              //  System.out.println(a);
+                                int y1, y2;
                                 y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwa2.get(a-1) );
                                 y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwa2.get(a) );
-                                System.out.println(a-1 + " " + ((jPanel1.getHeight()/2) - y1) + " " +  a + " " + ((jPanel1.getHeight()/2) - y2 ));
+                              //  System.out.println(a-1 + " " + ((jPanel1.getHeight()/2) - y1) + " " +  a + " " + ((jPanel1.getHeight()/2) - y2 ));
                                 
                                     if ( a == 1 )
                                         g.drawLine(a + 20, jPanel1.getHeight()/2, a + 20, (jPanel1.getHeight()/2) - y2);
@@ -289,13 +366,30 @@ public class Window extends javax.swing.JFrame {
                     }
         }
      catch(Exception e){
-         System.out.println("Wpisałeś: " + probes + " - to nie liczba całkowita... Debilu");
+         System.out.println("Wpisałeś: " + probes + " - to nie liczba całkowita");
      }       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseClicked
         jTextField1.setText("");        // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1MouseClicked
+
+    
+    private void b2ParamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ParamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b2ParamActionPerformed
+
+    private void a0ParamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a0ParamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a0ParamActionPerformed
+
+    private void a1ParamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a1ParamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a1ParamActionPerformed
+
+    private void b1ParamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ParamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b1ParamActionPerformed
 
     
     /**
@@ -334,6 +428,11 @@ public class Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField a0Param;
+    private javax.swing.JTextField a1Param;
+    private javax.swing.JTextField b0Param;
+    private javax.swing.JTextField b1Param;
+    private javax.swing.JTextField b2Param;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBoxAnimacja;

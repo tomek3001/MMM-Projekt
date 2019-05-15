@@ -2,24 +2,24 @@
 package transmitancja;
 
 public class Transmitancja {
-
-
+    double zmienna[] = new double[5];
+    
+    
     public static void main(String[] args) {
-        Sinus element = new Sinus(360); 
-        Triangle element2 = new Triangle(1);
-       
-        element2.generateTriangle();
-        for(int i = 0 ; i < 10; i++)
-            System.out.println("");
+     
+    }
+    
+    
+    public void getParameters(String parametr,int i){
         
-      /*  element.sinusTransformation();
-        for(int i = 0 ; i < 10; i++)
-        element2.howManySteps();
-            System.out.println("");
-        element.generateSinus();
-        for(int i = 0 ; i < 10; i++)
-            System.out.println("");*/
+        zmienna[i] = Double.parseDouble(parametr);
+        
+    }
 
+    public void transformSine(int dane){
+        Sinus temp = new Sinus(dane);
+        temp.generateSinus();
+       
     }
     
 }

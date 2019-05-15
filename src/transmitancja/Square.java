@@ -17,7 +17,7 @@ public class Square {
     
     boolean direction;
     int numberOfSteps;
-    double y = 0;
+    double y = 0;   
     List<Double> jakasNazwa2 = new ArrayList<>();
     public Square(int dane) {
     numberOfSteps = dane;
@@ -50,12 +50,11 @@ public class Square {
                 x = -1;
             }
             jakasNazwa2.add( x );
-            System.out.println(jakasNazwa2.get((int)i) + " jest wartością " + (i+1)+  " elementu ");
         }
     }
     public void squareTransformation(){
         for(int i = 0; i < numberOfSteps - 1; i++){
-            System.out.println(y + "      "+ i );    
+       //     System.out.println(y + "      "+ i );    
             y = y + (y + jakasNazwa2.get(i))*0.1;
         }
     }

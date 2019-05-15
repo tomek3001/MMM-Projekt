@@ -51,12 +51,11 @@ public class Triangle {
                 x = 2 * ( 50 - ( i % 50 ) );
             }
             jakasNazwa2.add( x / 50 - 1 );
-            System.out.println(jakasNazwa2.get((int)a) + " jest wartością " + (a+1)+  " elementu ");
+      //      System.out.println(jakasNazwa2.get((int)a) + " jest wartością " + (a+1)+  " elementu ");
         }
     }
     public void triangleTransformation(){
         for(int i = 0; i < numberOfSteps - 1; i++){
-            System.out.println(y + "      "+ i );    
             y = y + (y + jakasNazwa2.get(i))*0.1;
         }
     }
