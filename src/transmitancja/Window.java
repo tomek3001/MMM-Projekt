@@ -314,9 +314,10 @@ public class Window extends javax.swing.JFrame {
                         if(jCheckBoxAnimacja.isSelected())
                         animuj.Animacja();
                     }
-                    element.sinusTransformation(1, 1, 1, 1, 1);
+                    element.sinusTransformation(1, 0, 1, 0, 1);
                    for (int a=1; a <= temp - 1; a++){
                        // System.out.println(a);
+                       g.setColor(Color.BLUE);
                         int y1, y2;
                         y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a-1) );
                         y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a) );
