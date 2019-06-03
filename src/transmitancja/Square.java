@@ -19,6 +19,10 @@ public class Square {
     int numberOfSteps;
     double y = 0;   
     List<Double> jakasNazwa2 = new ArrayList<>();
+    List<Double> jakasNazwaT2 = new ArrayList<>();
+    double maxValue = 1.0; 
+     
+     
     public Square(int dane) {
     numberOfSteps = dane;
     }   
@@ -52,10 +56,25 @@ public class Square {
             jakasNazwa2.add( x );
         }
     }
-    public void squareTransformation(){
+public void squareTransformation(double a0, double a1,double b0,double b1, double b2, int delay){
+    
+         for(int j = 0 ; j <= delay;j++){
+            jakasNazwaT2.add(0.0);
+        }
         for(int i = 0; i < numberOfSteps - 1; i++){
-       //     System.out.println(y + "      "+ i );    
-            y = y + (y + jakasNazwa2.get(i))*0.1;
+           y = (-b1-b0)/b2*y+(a0+a1)/b2 *jakasNazwa2.get(i);
+            jakasNazwaT2.add(y);
+            if(maxValue < Math.abs(y))
+                maxValue = Math.abs(y);
         }
     }
+
+protected double scaleToBiggest(){
+        System.out.println("Zobaczymy co wypluje " + maxValue);
+        return maxValue;
+    }
 }
+
+
+
+
