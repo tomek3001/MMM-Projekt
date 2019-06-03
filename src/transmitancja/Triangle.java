@@ -18,7 +18,9 @@ public class Triangle {
     boolean direction;
     int numberOfSteps;
     double y = 0;
-    List<Double> jakasNazwa2 = new ArrayList<>();
+    List<Double> jakasNazwa3 = new ArrayList<>();
+     List<Double> jakasNazwa3T = new ArrayList<>(); 
+     double maxValue = 1.0;
     public Triangle(int dane) {
     numberOfSteps = dane;
     }   
@@ -50,13 +52,28 @@ public class Triangle {
             else {
                 x = 2 * ( 50 - ( i % 50 ) );
             }
-            jakasNazwa2.add( x / 50 - 1 );
+            jakasNazwa3.add( x / 50 - 1 );
       //      System.out.println(jakasNazwa2.get((int)a) + " jest wartością " + (a+1)+  " elementu ");
         }
     }
-    public void triangleTransformation(){
-        for(int i = 0; i < numberOfSteps - 1; i++){
-            y = y + (y + jakasNazwa2.get(i))*0.1;
+public void triangleTransformation(double a0, double a1,double b0,double b1, double b2, int delay){
+        
+     for(int j = 0 ; j <= delay;j++){
+            jakasNazwa3T.add(0.0);
         }
+    
+    for(int i = 0; i < numberOfSteps - 1; i++){
+        //    System.out.println(y + "      "+ i );    
+            System.out.println(a0 + " --- " + a1+ " --- " + b0 + " --- " + b1 + " --- " + b2);
+            y = (-b1-b0)/b2*y+(a0+a1)/b2 *jakasNazwa3.get(i);
+            jakasNazwa3T.add(y);
+            if(maxValue < Math.abs(y))
+                maxValue = Math.abs(y);
+        }
+    }
+
+protected double scaleToBiggest(){
+        System.out.println("Zobaczymy co wypluje " + maxValue);
+        return maxValue;
     }
 }
