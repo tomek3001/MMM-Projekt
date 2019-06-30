@@ -100,6 +100,11 @@ public class Window extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
         jButton1.setText("Generuj");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton1MousePressed(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -323,6 +328,7 @@ public class Window extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //String[] parameters = new String[5];
+        
         Animacja animuj = new Animacja();
         Graphics g = jPanel1.getGraphics();
         g.setColor(Color.white);        //zmiana koloru malowania na biały to zrobienia tła
@@ -508,6 +514,13 @@ public class Window extends javax.swing.JFrame {
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton4ActionPerformed
+
+    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+    charakterystyki_okno okno_nowe = new charakterystyki_okno();
+    okno_nowe.setVisible(true);
+    
+    
+    }//GEN-LAST:event_jButton1MousePressed
 
     
     /**
