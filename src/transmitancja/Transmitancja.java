@@ -18,7 +18,6 @@ public class Transmitancja {
 
     public void transformSine(int dane){
         Sinus temp = new Sinus(dane);
-        temp.generateSinus();
        
     }
     

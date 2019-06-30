@@ -25,52 +25,38 @@ public class Triangle {
     numberOfSteps = dane;
     }   
 
-    public boolean howManySteps(){
-        if(numberOfSteps > 360){
-            System.out.println("Nie można przyjąć tyle kroków");
-            return false;
-        }
-        else{
-            System.out.println("Wybrałeś: " + numberOfSteps + " kroków");
-            return true;
-        }
-    }
     
-    public void generateTriangle(){
+    public void generateTriangle(double frequency){
         double x = 0 ;
-        for(double a = 0; a < numberOfSteps; a++){
-            double i = a + 25;       //żeby sygnał startował od 0, a nie od -1
-            if( (Math.floor( i / 50.0 ) ) % 2 == 0){
+
+        for(double i = 0; i < numberOfSteps; i++){
+            if( (Math.floor( i / 50.0 * frequency / 1000) ) % 2 == 0){
                 direction = true;
             }
-            else if( (Math.floor( i / 50.0 ) ) % 2 == 1 ){
+            else if( (Math.floor( i / 50.0 * frequency / 1000) ) % 2 == 1 ){
                 direction = false;
             }
             if(direction){
-                x = 2 * ( i % 50 );               //Na razie moga byc tylko dwa przebiegi sinusoidalne. wynika to z dzielenia przez 360 i numberOfStepsmax = 360                            
+                x = 2 * (  (i * frequency / 1000) % 50 );               //Na razie moga byc tylko dwa przebiegi sinusoidalne. wynika to z dzielenia przez 360 i numberOfStepsmax = 360                            
             }
             else {
-                x = 2 * ( 50 - ( i % 50 ) );
+                x = 2 * ( 50 - ( (i * frequency / 1000) % 50 ) );
             }
-            jakasNazwa3.add( x / 50 - 1 );
-      //      System.out.println(jakasNazwa2.get((int)a) + " jest wartością " + (a+1)+  " elementu ");
-        }
-    }
-public void triangleTransformation(double a0, double a1,double b0,double b1, double b2, int delay){
-        
-     for(int j = 0 ; j <= delay;j++){
+            jakasNazwa3.add( x / 100 );}
+}
+public void triangleTransformation(double a0, double a1,double b0,double b1, double b2, int delay){    
+    double x = 0;
+        for(int j = 0 ; j <= delay;j++){
             jakasNazwa3T.add(0.0);
         }
-    
-    for(int i = 0; i < numberOfSteps - 1; i++){
-        //    System.out.println(y + "      "+ i );    
-            System.out.println(a0 + " --- " + a1+ " --- " + b0 + " --- " + b1 + " --- " + b2);
-            y = (-b1-b0)/b2*y+(a0+a1)/b2 *jakasNazwa3.get(i);
+                for(int h = 0; h < numberOfSteps - 1; h++){
+            x = (a0/b2)*jakasNazwa3.get(h)/100 - y*b0/b2/100+x;
+            y = a1/b2*jakasNazwa3.get(h)/100+y*(1-b1/b2/100)+x/100;
             jakasNazwa3T.add(y);
-            if(maxValue < Math.abs(y))
+             if(maxValue < Math.abs(y))
                 maxValue = Math.abs(y);
         }
-    }
+}
 
 protected double scaleToBiggest(){
         System.out.println("Zobaczymy co wypluje " + maxValue);

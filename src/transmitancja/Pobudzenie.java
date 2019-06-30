@@ -3,42 +3,43 @@
 import java.util.List;
  import java.lang.Math;
  import java.math.*;
-public class Sinus {
+public class Pobudzenie {
     int numberOfSteps;
     double y = 0;
     List<Double> jakasNazwa = new ArrayList<>();
     List<Double> jakasNazwaT = new ArrayList<>();
     List<Double> jakasNazwaT2 = new ArrayList<>();
     List<Double> jakasNazwaT3 = new ArrayList<>();
-    
+    List<Double> jakasNazwaT4 = new ArrayList<>();
     double maxValue = 1.0;
-    public Sinus(int dane) {
+    public Pobudzenie(int dane) {
     numberOfSteps = dane;
     }   
 
 
     
-    public void generateSinus(double frequency){
+    public void generatePobudzenie(){
 
         for(double i = 0; i < numberOfSteps; i++){
-                         //Na razie moga byc tylko dwa przebiegi sinusoidalne. wynika to z dzielenia przez 360 i numberOfStepsmax = 360                            
-            jakasNazwa.add(Math.sin(i/180*Math.PI*frequency/1000));
+           jakasNazwa.add(1.0);
         }
     }
-    public void sinusTransformation(double a0, double a1,double b0,double b1, double b2,int delay){
+    public void pobudzenieTransformation(double a0, double a1,double b0,double b1, double b2,int delay){
         double x = 0;
         for(int j = 0 ; j <= delay;j++){
             jakasNazwaT.add(0.0);
         }
-                for(int h = 0; h < numberOfSteps - 1; h++){
+
+        for(int h = 0; h < numberOfSteps - 1; h++){
             x = (a0/b2)*jakasNazwa.get(h)/100 - y*b0/b2/100+x;
             y = a1/b2*jakasNazwa.get(h)/100+y*(1-b1/b2/100)+x/100;
             jakasNazwaT.add(y);
              if(maxValue < Math.abs(y))
                 maxValue = Math.abs(y);
         }
+
     }
-    public void sinusOmegaRe(double a0, double a1,double b0,double b1, double b2,int delay){
+    public void pobudzenieOmegaRe(double a0, double a1,double b0,double b1, double b2,int delay){
         for(int i = 0; i < (numberOfSteps - 1); i++){
                 y = Math.sqrt(
                         Math.pow(((a1*b1-a0*b2)*Math.pow(i, 2)+a0*b0)/
@@ -58,7 +59,7 @@ public class Sinus {
         }
     }
     
-    public void sinusOmegaIm(double a0, double a1,double b0,double b1, double b2,int delay){
+    public void pobudzenieOmegaIm(double a0, double a1,double b0,double b1, double b2,int delay){
         for(int i = 0; i < (numberOfSteps - 1); i++){
                Math.atan(((a1*b0-a0*b1)*i-a1*b2*Math.pow(i,3))/(a0*b0-a1*b1-a0*b2*Math.pow(i,2)));
             jakasNazwaT3.add(y);

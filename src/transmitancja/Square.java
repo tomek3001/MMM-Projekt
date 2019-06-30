@@ -27,44 +27,34 @@ public class Square {
     numberOfSteps = dane;
     }   
 
-    public boolean howManySteps(){
-        if(numberOfSteps > 360){
-            System.out.println("Nie można przyjąć tyle kroków");
-            return false;
-        }
-        else{
-            System.out.println("Wybrałeś: " + numberOfSteps + " kroków");
-            return true;
-        }
-    }
-    
-    public void generateSquare(){
+    public void generateSquare(double frequency){
         double x = 0 ;
         for(double i = 0; i < numberOfSteps; i++){
-            if( (Math.floor( i / 50.0 ) ) % 2 == 0){
+            if( (Math.floor( i / 50.0 *frequency/1000) ) % 2 == 0){
                 direction = true;
             }
-            else if( (Math.floor( i / 50.0 ) ) % 2 == 1 ){
+            else if( (Math.floor( i / 50.0*frequency/1000 ) ) % 2 == 1 ){
                 direction = false;
             }
             if(direction){
                 x = 1;               //Na razie moga byc tylko dwa przebiegi sinusoidalne. wynika to z dzielenia przez 360 i numberOfStepsmax = 360                            
             }
             else {
-                x = -1;
+                x = 0-1;
             }
             jakasNazwa2.add( x );
         }
     }
 public void squareTransformation(double a0, double a1,double b0,double b1, double b2, int delay){
-    
-         for(int j = 0 ; j <= delay;j++){
+    double x = 0;
+        for(int j = 0 ; j <= delay;j++){
             jakasNazwaT2.add(0.0);
         }
-        for(int i = 0; i < numberOfSteps - 1; i++){
-           y = (-b1-b0)/b2*y+(a0+a1)/b2 *jakasNazwa2.get(i);
+                for(int h = 0; h < numberOfSteps - 1; h++){
+            x = (a0/b2)*jakasNazwa2.get(h)/100 - y*b0/b2/100+x;
+            y = a1/b2*jakasNazwa2.get(h)/100+y*(1-b1/b2/100)+x/100;
             jakasNazwaT2.add(y);
-            if(maxValue < Math.abs(y))
+             if(maxValue < Math.abs(y))
                 maxValue = Math.abs(y);
         }
     }
