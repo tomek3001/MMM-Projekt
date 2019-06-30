@@ -482,7 +482,22 @@ public class Window extends javax.swing.JFrame {
                         if(jCheckBoxAnimacja.isSelected())
                         animuj.Animacja();
                     }
-                
+                                 
+                element.pobudzenieOmegaRe(Double.parseDouble(a0Param.getText()), Double.parseDouble(a1Param.getText()),
+                                        Double.parseDouble(b0Param.getText()), Double.parseDouble(b1Param.getText()),
+                                        Double.parseDouble(b2Param.getText()), Integer.parseInt(delay.getText()));
+                                                  
+          for (int a=1; a <= temp - 1; a++){
+
+                       g.setColor(Color.RED);
+                        int y1, y2;
+                        y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT2.get(a-1)*(1/element.scaleToBiggest())  );
+                        y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT2.get(a)*(1/element.scaleToBiggest())  );
+                        System.out.println(y1 + "     " + y2);
+                        g.drawLine(a-1 + 20, (jPanel1.getHeight()/2) - y1, a + 20, (jPanel1.getHeight()/2) - y2);
+                        if(jCheckBoxAnimacja.isSelected())
+                        animuj.Animacja();
+                    }                
             }
         }
      catch(Exception e){
@@ -516,9 +531,7 @@ public class Window extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton4ActionPerformed
 
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
-    charakterystyki_okno okno_nowe = new charakterystyki_okno();
-    okno_nowe.setVisible(true);
-    
+
     
     }//GEN-LAST:event_jButton1MousePressed
 
