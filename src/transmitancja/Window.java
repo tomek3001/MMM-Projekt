@@ -328,7 +328,6 @@ public class Window extends javax.swing.JFrame {
         //String[] parameters = new String[5];
         Animacja animuj = new Animacja();
         Graphics g = jPanel1.getGraphics();
-        super.paintComponents(g);
         g.setColor(Color.white);        //zmiana koloru malowania na biały to zrobienia tła
         g.fillRect(2, 2, jPanel1.getWidth()-2, jPanel1.getHeight()-2);    //"czyszczenie", malowanie tła jak będzie czas to można to zrobic lepiej
         g.setColor(Color.black);        //przywrócenie pędzlowi czarnego koloru
