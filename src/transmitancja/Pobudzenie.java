@@ -40,7 +40,7 @@ public class Pobudzenie {
 
     }
     public void pobudzenieOmegaRe(double a0, double a1,double b0,double b1, double b2,int delay){
-        for(int i = 0; i < (numberOfSteps - 1); i++){
+        for(int i = 2; i < (4000); i++){
                 y = 20*Math.log10(Math.sqrt((
                         Math.pow(a0*b0+(a1*b1-a0*b2)*Math.pow(i,2)
                                 , 2) +
