@@ -56,7 +56,11 @@ public class Pobudzenie {
     }
     public void pobudzenieOmegaIm(double a0, double a1,double b0,double b1, double b2,int delay){
         for(double j = 0.0001; j < (numberOfSteps - 1)*100;){
-            y =  Math.atan(((a1*b0-a0*b1)*j-a1*b2*j*j*j)/(a0*b0+(a1*b1-a0*b2)*j*j))*180/Math.PI;
+               double l = (a1*b0-a0*b1)*j-a1*b2*j*j*j;
+               System.out.println("LICZNIK: " + l );
+               double m = (a0*b0+(a1*b1-a0*b2)*j*j);
+               System.out.println("MIANOWNIK: " + m);
+               y =  Math.atan2(l,m)*180/Math.PI;
             jakasNazwaT2.add(y);
             System.out.println("Częstotliwość: " + y);
             if(maxValue < Math.abs(y))
