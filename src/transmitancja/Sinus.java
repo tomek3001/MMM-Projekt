@@ -38,32 +38,33 @@ public class Sinus {
                 maxValue = Math.abs(y);
         }
     }
-    public void sinusOmegaRe(double a0, double a1,double b0,double b1, double b2,int delay){
-        for(int i = 0; i < (numberOfSteps - 1); i++){
-                y = Math.sqrt(
-                        Math.pow(((a1*b1-a0*b2)*Math.pow(i, 2)+a0*b0)/
-                                Math.pow(b0-b2*Math.pow(i,2)
+    public void sinusOmegaRe(double a0, double a1,double b0,double b1, double b2){
+       jakasNazwa.clear(); 
+       jakasNazwaT.clear();
+        maxValue = 0.0;
+       for(double i = 0.0001; i < (numberOfSteps - 1); ){
+                y = 20*Math.log10(Math.sqrt((
+                        Math.pow(a0*b0+(a1*b1-a0*b2)*Math.pow(i,2)
+                                , 2) +
+                                Math.pow((a1*b0-a0*b1)*i-a1*b2*Math.pow(i,3)
                                         ,2)
-                                +Math.pow(b1*i,2)
-                              , 2) +
-                        Math.pow((a1*b0*i-a0*b1*i-a1*b2*Math.pow(i,3))/
-                                Math.pow(b0-b2*Math.pow(i,2)
-                                        ,2)
-                                +Math.pow(b1*i,2)
-                                ,2)
-                );
-            jakasNazwaT2.add(y);
+                        )/Math.pow(Math.pow(b0,2) - 2*b0*b2*i*i
+                                +b2*b2*Math.pow(i,4) +Math.pow(b1*i,2)
+                                ,2)));
+            jakasNazwaT.add(y);
             if(maxValue < Math.abs(y))
                 maxValue = Math.abs(y);
+            i = i * 1.08;           
         }
     }
-    
     public void sinusOmegaIm(double a0, double a1,double b0,double b1, double b2,int delay){
-        for(int i = 0; i < (numberOfSteps - 1); i++){
-               Math.atan(((a1*b0-a0*b1)*i-a1*b2*Math.pow(i,3))/(a0*b0-a1*b1-a0*b2*Math.pow(i,2)));
-            jakasNazwaT3.add(y);
+        for(double j = 0.0001; j < (numberOfSteps - 1)*100;){
+            y =  Math.atan(((a1*b0-a0*b1)*j-a1*b2*j*j*j)/(a0*b0+(a1*b1-a0*b2)*j*j))*180/Math.PI;
+            jakasNazwaT2.add(y);
+            System.out.println("Częstotliwość: " + y);
             if(maxValue < Math.abs(y))
                 maxValue = Math.abs(y);
+            j = j * 1.08; 
         }
     }
     

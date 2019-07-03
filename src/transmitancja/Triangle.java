@@ -18,8 +18,10 @@ public class Triangle {
     boolean direction;
     int numberOfSteps;
     double y = 0;
-    List<Double> jakasNazwa3 = new ArrayList<>();
-     List<Double> jakasNazwa3T = new ArrayList<>(); 
+    List<Double> jakasNazwa = new ArrayList<>();
+    List<Double> jakasNazwaT = new ArrayList<>();
+    List<Double> jakasNazwaT2 = new ArrayList<>();
+    List<Double> jakasNazwaT3 = new ArrayList<>();
      double maxValue = 1.0;
     public Triangle(int dane) {
     numberOfSteps = dane;
@@ -42,21 +44,51 @@ public class Triangle {
             else {
                 x = 2 * ( 50 - ( (i * frequency / 1000) % 50 ) );
             }
-            jakasNazwa3.add( x / 100 );}
+            jakasNazwa.add( x / 100 );}
 }
-public void triangleTransformation(double a0, double a1,double b0,double b1, double b2, int delay){    
+    public void triangleTransformation(double a0, double a1,double b0,double b1, double b2, int delay){    
     double x = 0;
         for(int j = 0 ; j <= delay;j++){
-            jakasNazwa3T.add(0.0);
+            jakasNazwaT.add(0.0);
         }
                 for(int h = 0; h < numberOfSteps - 1; h++){
-            x = (a0/b2)*jakasNazwa3.get(h)/100 - y*b0/b2/100+x;
-            y = a1/b2*jakasNazwa3.get(h)/100+y*(1-b1/b2/100)+x/100;
-            jakasNazwa3T.add(y);
+            x = (a0/b2)*jakasNazwa.get(h)/100 - y*b0/b2/100+x;
+            y = a1/b2*jakasNazwa.get(h)/100+y*(1-b1/b2/100)+x/100;
+            jakasNazwaT.add(y);
              if(maxValue < Math.abs(y))
                 maxValue = Math.abs(y);
         }
 }
+
+    public void triangleOmegaRe(double a0, double a1,double b0,double b1, double b2){
+       jakasNazwa.clear(); 
+       jakasNazwaT.clear();
+        maxValue = 0.0;
+       for(double i = 0.0001; i < (numberOfSteps - 1); ){
+                y = 20*Math.log10(Math.sqrt((
+                        Math.pow(a0*b0+(a1*b1-a0*b2)*Math.pow(i,2)
+                                , 2) +
+                                Math.pow((a1*b0-a0*b1)*i-a1*b2*Math.pow(i,3)
+                                        ,2)
+                        )/Math.pow(Math.pow(b0,2) - 2*b0*b2*i*i
+                                +b2*b2*Math.pow(i,4) +Math.pow(b1*i,2)
+                                ,2)));
+            jakasNazwaT.add(y);
+            if(maxValue < Math.abs(y))
+                maxValue = Math.abs(y);
+            i = i * 1.08;           
+        }
+    }
+    public void triangleOmegaIm(double a0, double a1,double b0,double b1, double b2,int delay){
+        for(double j = 0.0001; j < (numberOfSteps - 1)*100;){
+            y =  Math.atan(((a1*b0-a0*b1)*j-a1*b2*j*j*j)/(a0*b0+(a1*b1-a0*b2)*j*j))*180/Math.PI;
+            jakasNazwaT2.add(y);
+            System.out.println("Częstotliwość: " + y);
+            if(maxValue < Math.abs(y))
+                maxValue = Math.abs(y);
+            j = j * 1.08; 
+        }
+    }
 
 protected double scaleToBiggest(){
         System.out.println("Zobaczymy co wypluje " + maxValue);
