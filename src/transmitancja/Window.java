@@ -335,8 +335,17 @@ public class Window extends javax.swing.JFrame {
         g.setColor(Color.black);        //przywrócenie pędzlowi czarnego koloru
         g.drawLine(20, jPanel1.getHeight()/4, jPanel1.getWidth(), jPanel1.getHeight()/4);  //rysowanie linii poziomej - osi x dla odpowiedzi
         g.drawString("0", 10, jPanel1.getHeight()/4+5);                                    //oraz oznaczenie "0"
+        for (int i=1; i<((jPanel1.getWidth()-51)/102); i++)                                
+        {                                                                                  //
+        g.drawString("|", i*(10+102), jPanel1.getHeight()/4+4);                            //generowanie oznaczeń osi x      
+        g.drawString(Integer.toString(i), i*(10+102)-2, jPanel1.getHeight()/4+19);         //      
+        }
+        g.drawString("0", 10, jPanel1.getHeight()/4+5);                                    //oraz oznaczenie "0"
         g.drawLine(20, 20, 20, jPanel1.getHeight()/2-30);                                     //rysowanie lini pionowej - osi y
-        g.drawLine(20, jPanel1.getHeight()/2+100, jPanel1.getWidth(), jPanel1.getHeight()/2+100);  //rysowanie linii poziomej - osi x dla charakterystyk 
+        g.drawLine(20, jPanel1.getHeight()/2+100, jPanel1.getWidth(), jPanel1.getHeight()/2+100);  //rysowanie linii poziomej - osi x dla odpowiedzi
+        g.drawString("▲", 14, 30);                          //rysowanie strzałki poziomej - osi x dla odpowiedzi
+        g.drawString("►", jPanel1.getWidth()-9, jPanel1.getHeight()/4+6);                          //rysowanie strzałki poziomej - osi x dla odpowiedzi
+        g.drawString("czas [s]", jPanel1.getWidth()-45, jPanel1.getHeight()/4+19);                          //rysowanie strzałki poziomej - osi x dla charakterystyk 
         g.setColor(Color.LIGHT_GRAY);        // szary dla odróżnienia ramek od osi
         g.drawLine(20, jPanel1.getHeight()/2 - 30,20 ,jPanel1.getHeight()-30);
         g.drawLine(jPanel1.getWidth()/2, jPanel1.getHeight()/2-30,jPanel1.getWidth()/2 ,jPanel1.getHeight()-30);
@@ -352,9 +361,22 @@ public class Window extends javax.swing.JFrame {
                 Sinus element = new Sinus(temp);
                 element.generateSinus(freq);
                 
+                
                 element.sinusTransformation(Double.parseDouble(a0Param.getText()), Double.parseDouble(a1Param.getText()),
                             Double.parseDouble(b0Param.getText()), Double.parseDouble(b1Param.getText()), 
                             Double.parseDouble(b2Param.getText()),Integer.parseInt(delay.getText()));
+                
+                                        y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * (1/element.scaleToBiggest())/2 );
+                        int temp_os_y = (int)(element.scaleToBiggest() -((element.scaleToBiggest())%3));
+                        g.setColor(Color.red);
+                        //if ()
+                        for (int i=1; i<element.scaleToBiggest(); i++){
+                            if(element.scaleToBiggest()<5 || i%(((int)(element.scaleToBiggest()))/4) == 0){
+                            g.drawString("_", 15, (jPanel1.getHeight()/4) - i*y1-1);
+                            g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - i*y1 + 3);
+                            }
+                        }
+                        g.setColor(new Color(0.3f, 0.7f, 0.2f));
                 
                     for (int a=1; a <= temp - 1; a++){
                         y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwa.get(a-1)*(1/element.scaleToBiggest())/4 );
@@ -406,7 +428,6 @@ public class Window extends javax.swing.JFrame {
                    
                    
                    
-                   
             }
             else if (jRadioButton2.isSelected()){
                        
@@ -416,6 +437,17 @@ public class Window extends javax.swing.JFrame {
                                         Double.parseDouble(b0Param.getText()), Double.parseDouble(b1Param.getText()), 
                                         Double.parseDouble(b2Param.getText()), Integer.parseInt(delay.getText()));
                   
+                                                y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * (1/element.scaleToBiggest())/2 );
+                        int temp_os_y = (int)(element.scaleToBiggest() -((element.scaleToBiggest())%3));
+                        g.setColor(Color.red);
+                        //if ()
+                        for (int i=1; i<element.scaleToBiggest(); i++){
+                            if(element.scaleToBiggest()<5 || i%(((int)(element.scaleToBiggest()))/4) == 0){
+                            g.drawString("_", 15, (jPanel1.getHeight()/4) - i*y1-1);
+                            g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - i*y1 + 3);
+                            }
+                        }
+                        g.setColor(new Color(0.3f, 0.7f, 0.2f));
                         
                         for (int a=1; a <= temp - 1; a++){
                            y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwa.get(a-1)*(1/element.scaleToBiggest())/4 );
@@ -472,6 +504,18 @@ public class Window extends javax.swing.JFrame {
                         Double.parseDouble(b0Param.getText()), Double.parseDouble(b1Param.getText()),
                         Double.parseDouble(b2Param.getText()), Integer.parseInt(delay.getText()));
                  
+                                        y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * (1/element.scaleToBiggest())/2 );
+                        int temp_os_y = (int)(element.scaleToBiggest() -((element.scaleToBiggest())%3));
+                        g.setColor(Color.red);
+                        //if ()
+                        for (int i=1; i<element.scaleToBiggest(); i++){
+                            if(element.scaleToBiggest()<5 || i%(((int)(element.scaleToBiggest()))/4) == 0){
+                            g.drawString("_", 15, (jPanel1.getHeight()/4) - i*y1-1);
+                            g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - i*y1 + 3);
+                            }
+                        }
+                        g.setColor(new Color(0.3f, 0.7f, 0.2f));
+                
                 for (int a=1; a <= temp - 1; a++){
                     y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwa.get(a-1)*(1/element.scaleToBiggest())/4 );
                     y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwa.get(a)*(1/element.scaleToBiggest())/4 );
@@ -519,17 +563,31 @@ public class Window extends javax.swing.JFrame {
             else if (jRadioButton4.isSelected()){                
                 Pobudzenie element = new Pobudzenie(temp);
                 element.generatePobudzenie();
+                
+                        
                 element.pobudzenieTransformation(Double.parseDouble(a0Param.getText()), Double.parseDouble(a1Param.getText()),
                                 Double.parseDouble(b0Param.getText()), Double.parseDouble(b1Param.getText()),
                                 Double.parseDouble(b2Param.getText()), Integer.parseInt(delay.getText()));
                 
+                        y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * (1/element.scaleToBiggest())/2 );
+                        int temp_os_y = (int)(element.scaleToBiggest() -((element.scaleToBiggest())%3));
+                        g.setColor(Color.red);
+                        //if ()
+                        for (int i=1; i<element.scaleToBiggest(); i++){
+                            if(element.scaleToBiggest()<5 || i%(((int)(element.scaleToBiggest()))/4) == 0){
+                            g.drawString("_", 15, (jPanel1.getHeight()/4) - i*y1-1);
+                            g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - i*y1 + 3);
+                            }
+                        }
+                        g.setColor(new Color(0.3f, 0.7f, 0.2f));
+                
                  for (int a=1; a <= temp - 1; a++){
-                        y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwa.get(a-1)*(1/element.scaleToBiggest())/2 );
-                        y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwa.get(a)*(1/element.scaleToBiggest())/2 );
-                        g.drawLine(a-1 + 20, (jPanel1.getHeight()/4) - y1, a + 20, (jPanel1.getHeight()/4) - y2);
+                        y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * (1/element.scaleToBiggest())/2 );
+                        g.drawLine(a-1 + 20, (jPanel1.getHeight()/4) - y1, a + 20, (jPanel1.getHeight()/4) - y1);
                         if(jCheckBoxAnimacja.isSelected())
                             animuj.Animacja();
                 }
+                 
                  
                 for (int a=1; a <= temp - 1; a++){
                     g.setColor(Color.BLUE);
@@ -563,10 +621,13 @@ public class Window extends javax.swing.JFrame {
                     if(jCheckBoxAnimacja.isSelected())
                         animuj.Animacja();
                }
+                
             }
         }
      catch(Exception e){
      }       
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     
