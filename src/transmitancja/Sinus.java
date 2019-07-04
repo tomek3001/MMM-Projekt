@@ -61,7 +61,7 @@ public class Sinus {
         for(double j = 0.0001; j < (numberOfSteps - 1)*100;){
             y =  Math.atan2(((a1*b0-a0*b1)*j-a1*b2*j*j*j),(a0*b0+(a1*b1-a0*b2)*j*j))*180/Math.PI;
             jakasNazwaT2.add(y);
-            System.out.println("Częstotliwość: " + y);
+            //System.out.println("Częstotliwość: " + y);
             if(maxValue < Math.abs(y))
                 maxValue = Math.abs(y);
             j = j * 1.08; 
