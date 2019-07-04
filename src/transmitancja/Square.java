@@ -67,7 +67,7 @@ public void squareOmegaRe(double a0, double a1,double b0,double b1, double b2){
        jakasNazwa.clear(); 
        jakasNazwaT.clear();
         maxValue = 0.0;
-       for(double i = 0.0001; i < (numberOfSteps - 1); ){
+       for(double i = 0.001; i < (numberOfSteps - 1); ){
                 y = 20*Math.log10(Math.sqrt((
                         Math.pow(a0*b0+(a1*b1-a0*b2)*Math.pow(i,2)
                                 , 2) +
@@ -79,22 +79,20 @@ public void squareOmegaRe(double a0, double a1,double b0,double b1, double b2){
             jakasNazwaT.add(y);
             if(maxValue < Math.abs(y))
                 maxValue = Math.abs(y);
-            i = i * 1.08;           
+            i = i * 1.06;           
         }
     }
 public void squareOmegaIm(double a0, double a1,double b0,double b1, double b2,int delay){
-        for(double j = 0.0001; j < (numberOfSteps - 1)*100;){
+        for(double j = 0.001; j < (numberOfSteps - 1)*100;){
             y =  Math.atan2(((a1*b0-a0*b1)*j-a1*b2*j*j*j),(a0*b0+(a1*b1-a0*b2)*j*j))*180/Math.PI;
             jakasNazwaT2.add(y);
-            System.out.println("Częstotliwość: " + y);
             if(maxValue < Math.abs(y))
                 maxValue = Math.abs(y);
-            j = j * 1.08; 
+            j = j * 1.06; 
         }
     }
 protected double scaleToBiggest(){
-        System.out.println("Zobaczymy co wypluje " + maxValue);
-        return maxValue;
+       return maxValue;
     }
 }
 

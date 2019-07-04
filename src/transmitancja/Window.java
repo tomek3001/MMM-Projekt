@@ -327,7 +327,7 @@ public class Window extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //String[] parameters = new String[5];
-        
+        int polozenieY = 140;
         Animacja animuj = new Animacja();
         Graphics g = jPanel1.getGraphics();
         g.setColor(Color.white);        //zmiana koloru malowania na biały to zrobienia tła
@@ -342,22 +342,25 @@ public class Window extends javax.swing.JFrame {
         }
         g.drawString("0", 10, jPanel1.getHeight()/4+5);                                    //oraz oznaczenie "0"
         g.drawLine(20, 20, 20, jPanel1.getHeight()/2-30);                                     //rysowanie lini pionowej - osi y
-        g.drawLine(20, jPanel1.getHeight()/2+100, jPanel1.getWidth(), jPanel1.getHeight()/2+100);  //rysowanie linii poziomej - osi x dla charakterystyk
+        g.drawLine(20, jPanel1.getHeight()/2+polozenieY, jPanel1.getWidth(), jPanel1.getHeight()/2+polozenieY);  //rysowanie linii poziomej - osi x dla charakterystyk
         
-        
+         for(int i = -180;i <= 180; i = i + 30){   
+                    g.setColor(Color.BLACK);   
+                   g.drawString("_ " + Integer.toString(i), jPanel1.getWidth()/2-2, jPanel1.getHeight()/2 - i*26/30 + polozenieY);                                    //oraz oznaczenie "0"    
+                }
         for (int i=1; i<8; i++)                                
         {                                                                                                          //
-        g.drawString("|", 2*(i*30+9), jPanel1.getHeight()/2+104);                                                 //generowanie oznaczeń osi x      
-        g.drawString(Double.toString(Math.pow(10, i-4)), 2*(i*30+9)-2, jPanel1.getHeight()/2+119);                           //      
-        g.drawString("|", jPanel1.getWidth()/2+2*(i*30-1), jPanel1.getHeight()/2+104);                                                 //generowanie oznaczeń osi x      
-        g.drawString(Double.toString(Math.pow(10, i-4)), jPanel1.getWidth()/2+2*(i*30-1)-2, jPanel1.getHeight()/2+119);                           //      
+        g.drawString("|", 2*(i*30+9), jPanel1.getHeight()/2+ polozenieY + 4);                                                 //generowanie oznaczeń osi x      
+        g.drawString(Double.toString(Math.pow(10, i-4)), 2*(i*30+9)-2, jPanel1.getHeight()/2 + polozenieY + 19);                           //      
+        g.drawString("|", jPanel1.getWidth()/2+2*(i*30-1), jPanel1.getHeight()/2+polozenieY + 4);                                                 //generowanie oznaczeń osi x      
+        g.drawString(Double.toString(Math.pow(10, i-4)), jPanel1.getWidth()/2+2*(i*30-1)-2, jPanel1.getHeight()/2 + polozenieY + 19);                           //      
         }
-        g.drawString("▲", 14, 350);                                                                             //rysowanie strzałki pionowej - osi y dla |G(jw)|
-        g.drawString("►", jPanel1.getWidth()/2-9, jPanel1.getHeight()/2+106);                                   //rysowanie strzałki poziomej - osi x dla |G(jw)|
-        g.drawString("f [rad/s]", jPanel1.getWidth()/2-45, jPanel1.getHeight()/2+119);                          //rysowanie strzałki poziomej - osi x dla charakterystyk 
-        g.drawString("▲", jPanel1.getWidth()/2-6, 350);                                                        //rysowanie strzałki pionowej - osi y dla arg(G(jw))
-        g.drawString("►", jPanel1.getWidth()-9, jPanel1.getHeight()/2+106);                                   //rysowanie strzałki poziomej - osi x dla arg(G(jw))
-        g.drawString("f [rad/s]", jPanel1.getWidth()-45, jPanel1.getHeight()/2+119);                          //rysowanie strzałki poziomej - osi x dla charakterystyk 
+        g.drawString("▲", 14, jPanel1.getHeight()/2-25);                                                                             //rysowanie strzałki pionowej - osi y dla |G(jw)|
+        g.drawString("►", jPanel1.getWidth()/2-9, jPanel1.getHeight()/2 + polozenieY + 6);                                   //rysowanie strzałki poziomej - osi x dla |G(jw)|
+        g.drawString("f [rad/s]", jPanel1.getWidth()/2-45, jPanel1.getHeight()/2+polozenieY + 19);                          //rysowanie strzałki poziomej - osi x dla charakterystyk 
+        g.drawString("▲", jPanel1.getWidth()/2-6, jPanel1.getHeight()/2 - 25);                                                        //rysowanie strzałki pionowej - osi y dla arg(G(jw))
+        g.drawString("►", jPanel1.getWidth()-9, jPanel1.getHeight()/2+polozenieY + 6);                                   //rysowanie strzałki poziomej - osi x dla arg(G(jw))
+        g.drawString("f [rad/s]", jPanel1.getWidth()-45, jPanel1.getHeight()/2+polozenieY + 19);                          //rysowanie strzałki poziomej - osi x dla charakterystyk 
         
         
 
@@ -386,7 +389,6 @@ public class Window extends javax.swing.JFrame {
                             Double.parseDouble(b2Param.getText()),Integer.parseInt(delay.getText()));
                 
                                         y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * (1/element.scaleToBiggest())/2 );
-                        int temp_os_y = (int)(element.scaleToBiggest() -((element.scaleToBiggest())%3));
                         g.setColor(Color.red);
                         //if ()
                         for (int i=1; i<element.scaleToBiggest(); i++){
@@ -427,17 +429,17 @@ public class Window extends javax.swing.JFrame {
                
                 for (int a=1; a <= temp - 1; a++){
                     g.setColor(Color.RED);
-                    y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a-1)*(1/element.scaleToBiggest())/2 - 100);
-                    y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a)*(1/element.scaleToBiggest())/2 - 100);
+                    y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a-1)*(1/element.scaleToBiggest())/2 - polozenieY);
+                    y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a)*(1/element.scaleToBiggest())/2 - polozenieY);
                     g.drawLine((a-1 + 10)*2, (jPanel1.getHeight()/2) - y1, (a + 10)*2, (jPanel1.getHeight()/2) - y2);
                     if(jCheckBoxAnimacja.isSelected())
                         animuj.Animacja();
                
                     g.setColor(Color.MAGENTA);
                     y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * 
-                            element.jakasNazwaT2.get(a-1) * (1/element.scaleToBiggest()) / 2  - 100);
+                            element.jakasNazwaT2.get(a-1) * (1/element.scaleToBiggest()) / 2  - polozenieY);
                     y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * 
-                            element.jakasNazwaT2.get(a) * (1/element.scaleToBiggest()) / 2  - 100 );
+                            element.jakasNazwaT2.get(a) * (1/element.scaleToBiggest()) / 2  - polozenieY );
                     g.drawLine((a-1)*2 + jPanel1.getWidth()/2, (jPanel1.getHeight()/2) - y1, a*2 + jPanel1.getWidth()/2, (jPanel1.getHeight()/2) - y2);
                     if(jCheckBoxAnimacja.isSelected())
                         animuj.Animacja();
@@ -495,17 +497,17 @@ public class Window extends javax.swing.JFrame {
                
                 for (int a=1; a <= temp - 1; a++){
                     g.setColor(Color.RED);
-                    y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a-1)*(1/element.scaleToBiggest())/2 - 100);
-                    y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a)*(1/element.scaleToBiggest())/2 - 100);
+                    y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a-1)*(1/element.scaleToBiggest())/2 - polozenieY);
+                    y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a)*(1/element.scaleToBiggest())/2 - polozenieY);
                     g.drawLine((a-1 + 10)*2, (jPanel1.getHeight()/2) - y1, (a + 10)*2, (jPanel1.getHeight()/2) - y2);
                     if(jCheckBoxAnimacja.isSelected())
                         animuj.Animacja();
                
                     g.setColor(Color.MAGENTA);
                     y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * 
-                            element.jakasNazwaT2.get(a-1) * (1/element.scaleToBiggest()) / 2  - 100);
+                            element.jakasNazwaT2.get(a-1) * (1/element.scaleToBiggest()) / 2  - polozenieY);
                     y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * 
-                            element.jakasNazwaT2.get(a) * (1/element.scaleToBiggest()) / 2  - 100 );
+                            element.jakasNazwaT2.get(a) * (1/element.scaleToBiggest()) / 2  - polozenieY );
                     g.drawLine((a-1)*2 + jPanel1.getWidth()/2, (jPanel1.getHeight()/2) - y1, a*2 + jPanel1.getWidth()/2, (jPanel1.getHeight()/2) - y2);
                     if(jCheckBoxAnimacja.isSelected())
                         animuj.Animacja();
@@ -563,17 +565,17 @@ public class Window extends javax.swing.JFrame {
                
                 for (int a=1; a <= temp - 1; a++){
                     g.setColor(Color.RED);
-                    y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a-1)*(1/element.scaleToBiggest())/2 - 100);
-                    y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a)*(1/element.scaleToBiggest())/2 - 100);
+                    y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a-1)*(1/element.scaleToBiggest())/2 - polozenieY);
+                    y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a)*(1/element.scaleToBiggest())/2 - polozenieY);
                     g.drawLine((a-1 + 10)*2, (jPanel1.getHeight()/2) - y1, (a + 10)*2, (jPanel1.getHeight()/2) - y2);
                     if(jCheckBoxAnimacja.isSelected())
                         animuj.Animacja();
                
                     g.setColor(Color.MAGENTA);
                     y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * 
-                            element.jakasNazwaT2.get(a-1) * (1/element.scaleToBiggest()) / 2  - 100);
+                            element.jakasNazwaT2.get(a-1) * (1/element.scaleToBiggest()) / 2  - polozenieY);
                     y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * 
-                            element.jakasNazwaT2.get(a) * (1/element.scaleToBiggest()) / 2  - 100 );
+                            element.jakasNazwaT2.get(a) * (1/element.scaleToBiggest()) / 2  - polozenieY );
                     g.drawLine((a-1)*2 + jPanel1.getWidth()/2, (jPanel1.getHeight()/2) - y1, a*2 + jPanel1.getWidth()/2, (jPanel1.getHeight()/2) - y2);
                     if(jCheckBoxAnimacja.isSelected())
                         animuj.Animacja();
@@ -626,20 +628,29 @@ public class Window extends javax.swing.JFrame {
                  element.pobudzenieOmegaIm(Double.parseDouble(a0Param.getText()), Double.parseDouble(a1Param.getText()),
                                         Double.parseDouble(b0Param.getText()), Double.parseDouble(b1Param.getText()),
                                         Double.parseDouble(b2Param.getText()), Integer.parseInt(delay.getText()));
-               
-                for (int a=1; a <= temp - 1; a++){
+                
+                  
+         for(double i = -element.maxValue2-20;i <= element.maxValue2+20; i = i + 20){   
+                    g.setColor(Color.BLACK);   
+                    int t = (int) Math.round(i);
+                   g.drawString("- " + Integer.toString(t), 20, jPanel1.getHeight()/2 - t*13/10 + polozenieY);                                    //oraz oznaczenie "0"    
+                   g.setColor(Color.LIGHT_GRAY); 
+                   g.drawLine(30, jPanel1.getHeight()/2 - t*13/10 + polozenieY,
+                           jPanel1.getWidth()/2, jPanel1.getHeight()/2 - t*13/10 + polozenieY);
+         }
+                for (int a=1; a <= temp - 1; a++){           
                     g.setColor(Color.RED);
-                    y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a-1)*(1/element.scaleToBiggest())/2 - 100);
-                    y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a)*(1/element.scaleToBiggest())/2 - 100);
+                    y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a-1)*(1/element.scaleToBiggest())/2 - polozenieY);
+                    y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a)*(1/element.scaleToBiggest())/2 - polozenieY);
                     g.drawLine((a-1 + 10)*2, (jPanel1.getHeight()/2) - y1, (a + 10)*2, (jPanel1.getHeight()/2) - y2);
                     if(jCheckBoxAnimacja.isSelected())
                         animuj.Animacja();
                
                     g.setColor(Color.MAGENTA);
                     y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * 
-                            element.jakasNazwaT2.get(a-1) * (1/element.scaleToBiggest()) / 2  - 100);
+                            element.jakasNazwaT2.get(a-1) / element.scaleToBiggest() / 2 - polozenieY);
                     y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * 
-                            element.jakasNazwaT2.get(a) * (1/element.scaleToBiggest()) / 2  - 100 );
+                            element.jakasNazwaT2.get(a) / element.scaleToBiggest() / 2  - polozenieY );
                     g.drawLine((a-1)*2 + jPanel1.getWidth()/2, (jPanel1.getHeight()/2) - y1, a*2 + jPanel1.getWidth()/2, (jPanel1.getHeight()/2) - y2);
                     if(jCheckBoxAnimacja.isSelected())
                         animuj.Animacja();
