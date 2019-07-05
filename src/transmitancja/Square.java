@@ -24,14 +24,16 @@ public class Square {
     List<Double> jakasNazwaT3 = new ArrayList<>();
     double maxValue = 1.0; 
     double maxValue2;
+    double frequency;
      boolean faza = false;
      
     public Square(int dane) {
     numberOfSteps = dane;
     }   
 
-    public void generateSquare(double frequency){
+    public void generateSquare(double frequency2){
         double x = 0 ;
+        frequency = frequency2*981;
         for(double i = 0; i < numberOfSteps; i++){
             if( (Math.floor( i / 50.0 *frequency/1000) ) % 2 == 0){
                 direction = true;

@@ -13,13 +13,16 @@ public class Sinus {
     boolean faza = false;
     double maxValue = 1.0;
     double maxValue2;
+    double frequency;
     public Sinus(int dane) {
     numberOfSteps = dane;
     }   
 
 
     
-    public void generateSinus(double frequency){
+    public void generateSinus(double frequency2){
+        
+        frequency = frequency2*3529;
 
         for(double i = 0; i < numberOfSteps; i++){
                          //Na razie moga byc tylko dwa przebiegi sinusoidalne. wynika to z dzielenia przez 360 i numberOfStepsmax = 360                            
