@@ -392,13 +392,14 @@ public class Window extends javax.swing.JFrame {
                         for (int i=1; i<6; i++){
                             if(element.scaleToBiggest()<5){
                             g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)(Math.round(i*y3+1)));
-                            g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - (int)Math.round(i*y3 + 3));
+                            g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - (int)Math.round(i*y3-4));
                             }
                             if(element.scaleToBiggest()>=5 ){
                             g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)Math.round(i*y3*temp_os_y/4+1));
-                            g.drawString(Integer.toString(i*(temp_os_y/4)), 4, (int)Math.round((jPanel1.getHeight()/4) - i*y3*temp_os_y/4 + 3));
+                            g.drawString(Integer.toString(i*(temp_os_y/4)), 24, (int)Math.round((jPanel1.getHeight()/4) - i*y3*temp_os_y/4 + 3)+2);
                             }
                         }
+                        
                         g.setColor(new Color(0.3f, 0.7f, 0.2f));
                 
                     for (int a=1; a <= temp - 1; a++){
@@ -467,13 +468,14 @@ public class Window extends javax.swing.JFrame {
                         for (int i=1; i<6; i++){
                             if(element.scaleToBiggest()<5){
                             g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)(Math.round(i*y3+1)));
-                            g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - (int)Math.round(i*y3 + 3));
+                            g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - (int)Math.round(i*y3-4));
                             }
                             if(element.scaleToBiggest()>=5 ){
                             g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)Math.round(i*y3*temp_os_y/4+1));
-                            g.drawString(Integer.toString(i*(temp_os_y/4)), 4, (int)Math.round((jPanel1.getHeight()/4) - i*y3*temp_os_y/4 + 3));
+                            g.drawString(Integer.toString(i*(temp_os_y/4)), 24, (int)Math.round((jPanel1.getHeight()/4) - i*y3*temp_os_y/4 + 3)+2);
                             }
                         }
+                        
                         g.setColor(new Color(0.3f, 0.7f, 0.2f));
                         
                         for (int a=1; a <= temp - 1; a++){
@@ -538,13 +540,14 @@ public class Window extends javax.swing.JFrame {
                         for (int i=1; i<6; i++){
                             if(element.scaleToBiggest()<5){
                             g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)(Math.round(i*y3+1)));
-                            g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - (int)Math.round(i*y3 + 3));
+                            g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - (int)Math.round(i*y3-4));
                             }
                             if(element.scaleToBiggest()>=5 ){
                             g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)Math.round(i*y3*temp_os_y/4+1));
-                            g.drawString(Integer.toString(i*(temp_os_y/4)), 4, (int)Math.round((jPanel1.getHeight()/4) - i*y3*temp_os_y/4 + 3));
+                            g.drawString(Integer.toString(i*(temp_os_y/4)), 24, (int)Math.round((jPanel1.getHeight()/4) - i*y3*temp_os_y/4 + 3)+2);
                             }
                         }
+                        
                         g.setColor(new Color(0.3f, 0.7f, 0.2f));
                 
                 for (int a=1; a <= temp - 1; a++){
@@ -606,13 +609,14 @@ public class Window extends javax.swing.JFrame {
                         for (int i=1; i<6; i++){
                             if(element.scaleToBiggest()<5){
                             g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)(Math.round(i*y3+1)));
-                            g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - (int)Math.round(i*y3 + 3));
+                            g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - (int)Math.round(i*y3-4));
                             }
                             if(element.scaleToBiggest()>=5 ){
                             g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)Math.round(i*y3*temp_os_y/4+1));
-                            g.drawString(Integer.toString(i*(temp_os_y/4)), 4, (int)Math.round((jPanel1.getHeight()/4) - i*y3*temp_os_y/4 + 3));
+                            g.drawString(Integer.toString(i*(temp_os_y/4)), 24, (int)Math.round((jPanel1.getHeight()/4) - i*y3*temp_os_y/4 + 3)+2);
                             }
                         }
+                        
                         g.setColor(new Color(0.3f, 0.7f, 0.2f));
                 
                  for (int a=1; a <= temp - 1; a++){
