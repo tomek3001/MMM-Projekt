@@ -385,13 +385,18 @@ public class Window extends javax.swing.JFrame {
                             Double.parseDouble(b0Param.getText()), Double.parseDouble(b1Param.getText()), 
                             Double.parseDouble(b2Param.getText()),Integer.parseInt(delay.getText()));
                 
-                        y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * (1/element.scaleToBiggest())/2 );
+                        double y3;
+                        y3 =   0.45 * jPanel1.getHeight() * (1/element.scaleToBiggest())/2 ;
+                        int temp_os_y = (int)(element.scaleToBiggest() -((element.scaleToBiggest())%4));
                         g.setColor(Color.red);
-                        //if ()
                         for (int i=1; i<6; i++){
-                            if(element.scaleToBiggest()<5 || i%(((int)(element.scaleToBiggest()))/4) == 0){
-                            g.drawString("_", 15, (jPanel1.getHeight()/4) - i*y1-1);
-                            g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - i*y1 + 3);
+                            if(element.scaleToBiggest()<5){
+                            g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)(Math.round(i*y3+1)));
+                            g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - (int)Math.round(i*y3 + 3));
+                            }
+                            if(element.scaleToBiggest()>=5 ){
+                            g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)Math.round(i*y3*temp_os_y/4+1));
+                            g.drawString(Integer.toString(i*(temp_os_y/4)), 4, (int)Math.round((jPanel1.getHeight()/4) - i*y3*temp_os_y/4 + 3));
                             }
                         }
                         g.setColor(new Color(0.3f, 0.7f, 0.2f));
@@ -455,14 +460,18 @@ public class Window extends javax.swing.JFrame {
                                         Double.parseDouble(b0Param.getText()), Double.parseDouble(b1Param.getText()), 
                                         Double.parseDouble(b2Param.getText()), Integer.parseInt(delay.getText()));
                   
-                                                y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * (1/element.scaleToBiggest())/2 );
-                        int temp_os_y = (int)(element.scaleToBiggest() -((element.scaleToBiggest())%3));
+                        double y3;
+                        y3 =   0.45 * jPanel1.getHeight() * (1/element.scaleToBiggest())/2 ;
+                        int temp_os_y = (int)(element.scaleToBiggest() -((element.scaleToBiggest())%4));
                         g.setColor(Color.red);
-                        //if ()
-                        for (int i=1; i<element.scaleToBiggest(); i++){
-                            if(element.scaleToBiggest()<5 || i%(((int)(element.scaleToBiggest()))/4) == 0){
-                            g.drawString("_", 15, (jPanel1.getHeight()/4) - i*y1-1);
-                            g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - i*y1 + 3);
+                        for (int i=1; i<6; i++){
+                            if(element.scaleToBiggest()<5){
+                            g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)(Math.round(i*y3+1)));
+                            g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - (int)Math.round(i*y3 + 3));
+                            }
+                            if(element.scaleToBiggest()>=5 ){
+                            g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)Math.round(i*y3*temp_os_y/4+1));
+                            g.drawString(Integer.toString(i*(temp_os_y/4)), 4, (int)Math.round((jPanel1.getHeight()/4) - i*y3*temp_os_y/4 + 3));
                             }
                         }
                         g.setColor(new Color(0.3f, 0.7f, 0.2f));
@@ -522,14 +531,18 @@ public class Window extends javax.swing.JFrame {
                         Double.parseDouble(b0Param.getText()), Double.parseDouble(b1Param.getText()),
                         Double.parseDouble(b2Param.getText()), Integer.parseInt(delay.getText()));
                  
-                                        y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * (1/element.scaleToBiggest())/2 );
-                        int temp_os_y = (int)(element.scaleToBiggest() -((element.scaleToBiggest())%3));
+                        double y3;
+                        y3 =   0.45 * jPanel1.getHeight() * (1/element.scaleToBiggest())/2 ;
+                        int temp_os_y = (int)(element.scaleToBiggest() -((element.scaleToBiggest())%4));
                         g.setColor(Color.red);
-                        //if ()
-                        for (int i=1; i<element.scaleToBiggest(); i++){
-                            if(element.scaleToBiggest()<5 || i%(((int)(element.scaleToBiggest()))/4) == 0){
-                            g.drawString("_", 15, (jPanel1.getHeight()/4) - i*y1-1);
-                            g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - i*y1 + 3);
+                        for (int i=1; i<6; i++){
+                            if(element.scaleToBiggest()<5){
+                            g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)(Math.round(i*y3+1)));
+                            g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - (int)Math.round(i*y3 + 3));
+                            }
+                            if(element.scaleToBiggest()>=5 ){
+                            g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)Math.round(i*y3*temp_os_y/4+1));
+                            g.drawString(Integer.toString(i*(temp_os_y/4)), 4, (int)Math.round((jPanel1.getHeight()/4) - i*y3*temp_os_y/4 + 3));
                             }
                         }
                         g.setColor(new Color(0.3f, 0.7f, 0.2f));
@@ -589,16 +602,15 @@ public class Window extends javax.swing.JFrame {
                         double y3;
                         y3 =   0.45 * jPanel1.getHeight() * (1/element.scaleToBiggest())/2 ;
                         int temp_os_y = (int)(element.scaleToBiggest() -((element.scaleToBiggest())%4));
-                        g.setColor(Color.red);  
+                        g.setColor(Color.red);
                         for (int i=1; i<6; i++){
-                            //System.out.println("i: " + i + "\n" + "i%(((int)(element.scaleToBiggest()))/4): " + (i%(((int)(element.scaleToBiggest()))/4)));
                             if(element.scaleToBiggest()<5){
-                            g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)(Math.round(i*y3-1)));
+                            g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)(Math.round(i*y3+1)));
                             g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - (int)Math.round(i*y3 + 3));
                             }
                             if(element.scaleToBiggest()>=5 ){
-                                g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)Math.round(i*y3*temp_os_y/4+1));
-                                g.drawString(Integer.toString(i*(temp_os_y/4)), 4, (int)Math.round((jPanel1.getHeight()/4) - i*y3*temp_os_y/4 + 3));
+                            g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)Math.round(i*y3*temp_os_y/4+1));
+                            g.drawString(Integer.toString(i*(temp_os_y/4)), 4, (int)Math.round((jPanel1.getHeight()/4) - i*y3*temp_os_y/4 + 3));
                             }
                         }
                         g.setColor(new Color(0.3f, 0.7f, 0.2f));
