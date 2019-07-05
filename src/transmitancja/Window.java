@@ -641,27 +641,21 @@ public class Window extends javax.swing.JFrame {
                     g.setColor(Color.BLACK);                                            //Amplitudowego
                     int t = (int) Math.round(i);
                     System.out.println(element.maxValue2);
-                        g.drawString("- " + Integer.toString(t), 20, jPanel1.getHeight()/2 - t*13/10 + polozenieY);                                    //oraz oznaczenie "0"    
+                        g.drawString("- " + Integer.toString(t), 20, jPanel1.getHeight()/2 - t*13/10*60/(int)element.maxValue2 + polozenieY);                                    //oraz oznaczenie "0"    
                         g.setColor(Color.LIGHT_GRAY); 
-                        g.drawLine(25, jPanel1.getHeight()/2 - t*13/10 + polozenieY,
-                                   jPanel1.getWidth()/2, jPanel1.getHeight()/2 - t*13/10 + polozenieY);                 
+                        g.drawLine(25, jPanel1.getHeight()/2 - t*13/10*60/(int)element.maxValue2 + polozenieY,
+                                   jPanel1.getWidth()/2, jPanel1.getHeight()/2 - t*13/10*60/(int)element.maxValue2 + polozenieY);                 
          }
          
          for(double d = -element.maxValue;d <= element.maxValue; d = d + element.maxValue/6){    //Rysowani pionowych lini dla
                     g.setColor(Color.BLACK);                                                     //Fazowego
                    int i = (int) Math.round(d);
-                   if(element.maxValue > 179.0)
-                    g.drawString("_ " + Integer.toString(i), jPanel1.getWidth()/2-2, jPanel1.getHeight()/2 - i*26/30 + polozenieY);                                    //oraz oznaczenie "0"    
-                   else if(element.maxValue < 91.0)
-                    g.drawString("_ " + Integer.toString(i), jPanel1.getWidth()/2-2, jPanel1.getHeight()/2 - i*26/30*2 + polozenieY);    
+                    g.drawString("_ " + Integer.toString(i), jPanel1.getWidth()/2-2, jPanel1.getHeight()/2 - i*26/30*180/(int)element.maxValue + polozenieY);                                    //oraz oznaczenie "0"     
          
           g.setColor(Color.LIGHT_GRAY); 
-                    if(element.maxValue > 179.0)
-                        g.drawLine(jPanel1.getWidth()/2+5, jPanel1.getHeight()/2 - i*26/30 + polozenieY,
-                           jPanel1.getWidth(), jPanel1.getHeight()/2 - i*26/30 + polozenieY);
-                   else if(element.maxValue < 91.0)
-                         g.drawLine(jPanel1.getWidth()/2+5, jPanel1.getHeight()/2 - i*26/30*2 + polozenieY,
-                           jPanel1.getWidth(), jPanel1.getHeight()/2 - i*26/30*2 + polozenieY);
+                        g.drawLine(jPanel1.getWidth()/2+5, jPanel1.getHeight()/2 - i*26/30*180/(int)element.maxValue + polozenieY,
+                           jPanel1.getWidth(), jPanel1.getHeight()/2 - i*26/30*180/(int)element.maxValue + polozenieY);
+
          }
          
          
