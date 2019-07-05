@@ -430,6 +430,28 @@ public class Window extends javax.swing.JFrame {
                                         Double.parseDouble(b0Param.getText()), Double.parseDouble(b1Param.getText()),
                                         Double.parseDouble(b2Param.getText()), Integer.parseInt(delay.getText()));
                
+                 
+                 for(double i = -element.maxValue2 - 20;i <= element.maxValue2+20; i = i + 20){   //Rysowani poziomych lini dla
+                    g.setColor(Color.BLACK);                                            //Amplitudowego
+                    int t = (int) Math.round(i);
+                  
+                        g.drawString("- " + Integer.toString(t), 20, jPanel1.getHeight()/2 - t*13/10*60/(int)element.maxValue2 + polozenieY);                                    //oraz oznaczenie "0"    
+                        g.setColor(Color.LIGHT_GRAY); 
+                        g.drawLine(25, jPanel1.getHeight()/2 - t*13/10*60/(int)element.maxValue2 + polozenieY,
+                                   jPanel1.getWidth()/2, jPanel1.getHeight()/2 - t*13/10*60/(int)element.maxValue2 + polozenieY);                 
+         }
+         
+         for(double d = -element.maxValue;d <= element.maxValue; d = d + element.maxValue/6){    //Rysowani poziomych lini dla
+                    g.setColor(Color.BLACK);                                                     //Fazowego
+                   int i = (int) Math.round(d);
+                    g.drawString("_ " + Integer.toString(i), jPanel1.getWidth()/2-2, jPanel1.getHeight()/2 - i*26/30*180/(int)element.maxValue + polozenieY);                                    //oraz oznaczenie "0"     
+         
+          g.setColor(Color.LIGHT_GRAY); 
+                        g.drawLine(jPanel1.getWidth()/2+5, jPanel1.getHeight()/2 - i*26/30*180/(int)element.maxValue + polozenieY,
+                           jPanel1.getWidth(), jPanel1.getHeight()/2 - i*26/30*180/(int)element.maxValue + polozenieY);
+
+         }
+          
                 for (int a=1; a <= temp - 1; a++){
                     g.setColor(Color.RED);
                     y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a-1)*(1/element.scaleToBiggest())/2 - polozenieY);
@@ -503,6 +525,28 @@ public class Window extends javax.swing.JFrame {
                                         Double.parseDouble(b0Param.getText()), Double.parseDouble(b1Param.getText()),
                                         Double.parseDouble(b2Param.getText()), Integer.parseInt(delay.getText()));
                
+                 
+                 for(double i = -element.maxValue2 - 20;i <= element.maxValue2+20; i = i + 20){   //Rysowani poziomych lini dla
+                    g.setColor(Color.BLACK);                                            //Amplitudowego
+                    int t = (int) Math.round(i);
+                  
+                        g.drawString("- " + Integer.toString(t), 20, jPanel1.getHeight()/2 - t*13/10*60/(int)element.maxValue2 + polozenieY);                                    //oraz oznaczenie "0"    
+                        g.setColor(Color.LIGHT_GRAY); 
+                        g.drawLine(25, jPanel1.getHeight()/2 - t*13/10*60/(int)element.maxValue2 + polozenieY,
+                                   jPanel1.getWidth()/2, jPanel1.getHeight()/2 - t*13/10*60/(int)element.maxValue2 + polozenieY);                 
+         }
+         
+         for(double d = -element.maxValue;d <= element.maxValue; d = d + element.maxValue/6){    //Rysowani poziomych lini dla
+                    g.setColor(Color.BLACK);                                                     //Fazowego
+                   int i = (int) Math.round(d);
+                    g.drawString("_ " + Integer.toString(i), jPanel1.getWidth()/2-2, jPanel1.getHeight()/2 - i*26/30*180/(int)element.maxValue + polozenieY);                                    //oraz oznaczenie "0"     
+         
+          g.setColor(Color.LIGHT_GRAY); 
+                        g.drawLine(jPanel1.getWidth()/2+5, jPanel1.getHeight()/2 - i*26/30*180/(int)element.maxValue + polozenieY,
+                           jPanel1.getWidth(), jPanel1.getHeight()/2 - i*26/30*180/(int)element.maxValue + polozenieY);
+
+         }
+          
                 for (int a=1; a <= temp - 1; a++){
                     g.setColor(Color.RED);
                     y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a-1)*(1/element.scaleToBiggest())/2 - polozenieY);
@@ -576,6 +620,28 @@ public class Window extends javax.swing.JFrame {
                                         Double.parseDouble(b0Param.getText()), Double.parseDouble(b1Param.getText()),
                                         Double.parseDouble(b2Param.getText()), Integer.parseInt(delay.getText()));
                
+                 
+                 for(double i = -element.maxValue2 - 20;i <= element.maxValue2+20; i = i + 20){   //Rysowani poziomych lini dla
+                    g.setColor(Color.BLACK);                                            //Amplitudowego
+                    int t = (int) Math.round(i);
+                  
+                        g.drawString("- " + Integer.toString(t), 20, jPanel1.getHeight()/2 - t*13/10*60/(int)element.maxValue2 + polozenieY);                                    //oraz oznaczenie "0"    
+                        g.setColor(Color.LIGHT_GRAY); 
+                        g.drawLine(25, jPanel1.getHeight()/2 - t*13/10*60/(int)element.maxValue2 + polozenieY,
+                                   jPanel1.getWidth()/2, jPanel1.getHeight()/2 - t*13/10*60/(int)element.maxValue2 + polozenieY);                 
+         }
+         
+         for(double d = -element.maxValue;d <= element.maxValue; d = d + element.maxValue/6){    //Rysowani poziomych lini dla
+                    g.setColor(Color.BLACK);                                                     //Fazowego
+                   int i = (int) Math.round(d);
+                    g.drawString("_ " + Integer.toString(i), jPanel1.getWidth()/2-2, jPanel1.getHeight()/2 - i*26/30*180/(int)element.maxValue + polozenieY);                                    //oraz oznaczenie "0"     
+         
+          g.setColor(Color.LIGHT_GRAY); 
+                        g.drawLine(jPanel1.getWidth()/2+5, jPanel1.getHeight()/2 - i*26/30*180/(int)element.maxValue + polozenieY,
+                           jPanel1.getWidth(), jPanel1.getHeight()/2 - i*26/30*180/(int)element.maxValue + polozenieY);
+
+         }
+                 
                 for (int a=1; a <= temp - 1; a++){
                     g.setColor(Color.RED);
                     y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a-1)*(1/element.scaleToBiggest())/2 - polozenieY);

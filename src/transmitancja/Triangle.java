@@ -23,6 +23,7 @@ public class Triangle {
     List<Double> jakasNazwaT2 = new ArrayList<>();
     List<Double> jakasNazwaT3 = new ArrayList<>();
      double maxValue = 1.0;
+    double maxValue2;
      boolean faza = false;
     public Triangle(int dane) {
     numberOfSteps = dane;
@@ -79,6 +80,7 @@ public class Triangle {
                 maxValue = Math.abs(y);
             i = i * 1.06;           
         }
+       maxValue2 = maxValue;
     }
     public void triangleOmegaIm(double a0, double a1,double b0,double b1, double b2,int delay){
         for(double j = 0.001; j < (numberOfSteps - 1)*100;){  //Zmienione wartości omega lepiej oddają układy

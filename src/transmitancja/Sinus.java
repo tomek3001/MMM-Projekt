@@ -12,6 +12,7 @@ public class Sinus {
     List<Double> jakasNazwaT3 = new ArrayList<>();
     boolean faza = false;
     double maxValue = 1.0;
+    double maxValue2;
     public Sinus(int dane) {
     numberOfSteps = dane;
     }   
@@ -56,6 +57,7 @@ public class Sinus {
                 maxValue = Math.abs(y);
             i = i * 1.06;           
         }
+       maxValue2 = maxValue;
     }
     public void sinusOmegaIm(double a0, double a1,double b0,double b1, double b2,int delay){
         for(double j = 0.001; j < (numberOfSteps - 1)*100;){  //Zmienione wartości omega lepiej oddają układy
