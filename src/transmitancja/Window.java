@@ -335,10 +335,10 @@ public class Window extends javax.swing.JFrame {
         g.setColor(Color.black);        //przywrócenie pędzlowi czarnego koloru
         g.drawLine(20, jPanel1.getHeight()/4, jPanel1.getWidth(), jPanel1.getHeight()/4);  //rysowanie linii poziomej - osi x dla odpowiedzi
         g.drawString("0", 10, jPanel1.getHeight()/4+5);                                    //oraz oznaczenie "0"
-        for (int i=1; i<((jPanel1.getWidth()-70)/102); i++)                                
+        for (int i=1; i<((jPanel1.getWidth()-70)/102)+1; i++)                                
         {                                                                                  //
-        g.drawString("|", i*(10+102), jPanel1.getHeight()/4+4);                            //generowanie oznaczeń osi x      
-        g.drawString(Integer.toString(i), i*(10+102)-2, jPanel1.getHeight()/4+19);         //      
+        g.drawString("|", i*(102)+19, jPanel1.getHeight()/4+4);                            //generowanie oznaczeń osi x      
+        g.drawString(Integer.toString(i), i*(102)+17, jPanel1.getHeight()/4+19);         //      
         }
         g.drawString("0", 10, jPanel1.getHeight()/4+5);                                    //oraz oznaczenie "0"
         g.drawLine(20, 20, 20, jPanel1.getHeight()/2-30);                                     //rysowanie lini pionowej - osi y
