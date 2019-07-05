@@ -413,7 +413,7 @@ public class Window extends javax.swing.JFrame {
                    
                     
                    for (int a=1; a <= temp - 1; a++){
-                       // System.out.println(a);
+                    
                        g.setColor(Color.BLUE);
                         y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a-1)*(1/element.scaleToBiggest())/4);
                         y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a)*(1/element.scaleToBiggest())/4 );
@@ -644,7 +644,7 @@ public class Window extends javax.swing.JFrame {
          for(double i = -element.maxValue2 - 20;i <= element.maxValue2+20; i = i + 20){   //Rysowani pionowych lini dla
                     g.setColor(Color.BLACK);                                            //Amplitudowego
                     int t = (int) Math.round(i);
-                    System.out.println(element.maxValue2);
+                  
                         g.drawString("- " + Integer.toString(t), 20, jPanel1.getHeight()/2 - t*13/10*60/(int)element.maxValue2 + polozenieY);                                    //oraz oznaczenie "0"    
                         g.setColor(Color.LIGHT_GRAY); 
                         g.drawLine(25, jPanel1.getHeight()/2 - t*13/10*60/(int)element.maxValue2 + polozenieY,

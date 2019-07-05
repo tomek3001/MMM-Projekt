@@ -9,7 +9,7 @@ public class Pobudzenie {
     List<Double> jakasNazwa = new ArrayList<>();
     List<Double> jakasNazwaT = new ArrayList<>();
     List<Double> jakasNazwaT2 = new ArrayList<>();
-   
+    boolean faza = false;
     double maxValue = 1.0;
     double maxValue2;
     public Pobudzenie(int dane) {
@@ -62,12 +62,19 @@ public class Pobudzenie {
         for(double j = 0.001; j < (numberOfSteps - 1)*100;){  //Zmienione wartości omega lepiej oddają układy
                double l = (a1*b0-a0*b1)*j-a1*b2*j*j*j;
                double m = (a0*b0+(a1*b1-a0*b2)*j*j);
+               double temporary = y;
                y =  Math.atan2(l,m)*180/Math.PI;
+               if(temporary - y > 350)
+                   faza = true;
+               if(faza)
+                   y = y + 360;
+               System.out.println(y);
             jakasNazwaT2.add(y);
             if(maxValue < Math.abs(y))
                 maxValue = Math.abs(y);
             j = j * 1.06;        
         }
+        faza = false;
     }
     
     
