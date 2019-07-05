@@ -52,10 +52,9 @@ public class Pobudzenie {
                                 +b2*b2*Math.pow(i,4) +Math.pow(b1*i,2)
                                 ,2)));
             jakasNazwaT.add(y);
-            System.out.println(y);
             if(maxValue < Math.abs(y))
                 maxValue = Math.abs(y);
-            i = i * 1.06;           
+            i = i * 1.06;  
         }
        maxValue2 = maxValue;
     }

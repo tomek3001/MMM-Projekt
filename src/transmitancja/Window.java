@@ -344,10 +344,7 @@ public class Window extends javax.swing.JFrame {
         g.drawLine(20, 20, 20, jPanel1.getHeight()/2-30);                                     //rysowanie lini pionowej - osi y
         g.drawLine(20, jPanel1.getHeight()/2+polozenieY, jPanel1.getWidth(), jPanel1.getHeight()/2+polozenieY);  //rysowanie linii poziomej - osi x dla charakterystyk
         
-         for(int i = -180;i <= 180; i = i + 30){   
-                    g.setColor(Color.BLACK);   
-                   g.drawString("_ " + Integer.toString(i), jPanel1.getWidth()/2-2, jPanel1.getHeight()/2 - i*26/30 + polozenieY);                                    //oraz oznaczenie "0"    
-                }
+         
         for (int i=1; i<8; i++)                                
         {                                                                                                          //
         g.drawString("|", 2*(i*30+9), jPanel1.getHeight()/2+ polozenieY + 4);                                                 //generowanie oznaczeń osi x      
@@ -592,12 +589,7 @@ public class Window extends javax.swing.JFrame {
                         double y3;
                         y3 =   0.45 * jPanel1.getHeight() * (1/element.scaleToBiggest())/2 ;
                         int temp_os_y = (int)(element.scaleToBiggest() -((element.scaleToBiggest())%4));
-                        g.setColor(Color.red);
-                        System.out.println("\nelement.scaleToBiggest(): " + element.scaleToBiggest() + "\n" + 
-                                "(element.scaleToBiggest()))/4: " + ((element.scaleToBiggest())/4) + "\n" + 
-                                "element.scaleToBiggest() -((element.scaleToBiggest())%4): " + (element.scaleToBiggest() -((element.scaleToBiggest())%4)) + "\n" +
-                                "temp_os_y/5:  " + temp_os_y/5  + "\n" 
-                                );
+                        g.setColor(Color.red);  
                         for (int i=1; i<6; i++){
                             //System.out.println("i: " + i + "\n" + "i%(((int)(element.scaleToBiggest()))/4): " + (i%(((int)(element.scaleToBiggest()))/4)));
                             if(element.scaleToBiggest()<5){
@@ -605,13 +597,8 @@ public class Window extends javax.swing.JFrame {
                             g.drawString(Integer.toString(i), 4, (jPanel1.getHeight()/4) - (int)Math.round(i*y3 + 3));
                             }
                             if(element.scaleToBiggest()>=5 ){
-                                System.out.println("i: " + i +"\n"
-                                        + "y3: " + y3 +"\n"
-                                        + "(jPanel1.getHeight()/4) - i*y3*temp_os_y/5-1: " + ((jPanel1.getHeight()/4) - i*y3*temp_os_y/4+1) + "\n"
-                                        + "(jPanel1.getHeight()/4) - i*y3*temp_os_y/5 + 3: " + ((jPanel1.getHeight()/4) - i*y3*temp_os_y/4 + 3)
-                                        + "\ni*y3*temp_os_y/5: " + (i*y3*temp_os_y/5));
-                            g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)Math.round(i*y3*temp_os_y/4+1));
-                            g.drawString(Integer.toString(i*(temp_os_y/4)), 4, (int)Math.round((jPanel1.getHeight()/4) - i*y3*temp_os_y/4 + 3));
+                                g.drawString("_", 15, (jPanel1.getHeight()/4) - (int)Math.round(i*y3*temp_os_y/4+1));
+                                g.drawString(Integer.toString(i*(temp_os_y/4)), 4, (int)Math.round((jPanel1.getHeight()/4) - i*y3*temp_os_y/4 + 3));
                             }
                         }
                         g.setColor(new Color(0.3f, 0.7f, 0.2f));
@@ -632,31 +619,50 @@ public class Window extends javax.swing.JFrame {
                     if(jCheckBoxAnimacja.isSelected())
                         animuj.Animacja();
                 }
-                element.pobudzenieOmegaRe(Double.parseDouble(a0Param.getText()), Double.parseDouble(a1Param.getText()),
+                 element.pobudzenieOmegaRe(Double.parseDouble(a0Param.getText()), Double.parseDouble(a1Param.getText()),
                                         Double.parseDouble(b0Param.getText()), Double.parseDouble(b1Param.getText()),
                                         Double.parseDouble(b2Param.getText()));
                  element.pobudzenieOmegaIm(Double.parseDouble(a0Param.getText()), Double.parseDouble(a1Param.getText()),
                                         Double.parseDouble(b0Param.getText()), Double.parseDouble(b1Param.getText()),
-                                        Double.parseDouble(b2Param.getText()), Integer.parseInt(delay.getText()));
-                
-                  
-         for(double i = -element.maxValue2-20;i <= element.maxValue2+20; i = i + 20){   
-                    g.setColor(Color.BLACK);   
+                                        Double.parseDouble(b2Param.getText()), Integer.parseInt(delay.getText()));    
+         for(double i = -element.maxValue2 - 20;i <= element.maxValue2+20; i = i + 20){   //Rysowani pionowych lini dla
+                    g.setColor(Color.BLACK);                                            //Amplitudowego
                     int t = (int) Math.round(i);
-                   g.drawString("- " + Integer.toString(t), 20, jPanel1.getHeight()/2 - t*13/10 + polozenieY);                                    //oraz oznaczenie "0"    
-                   g.setColor(Color.LIGHT_GRAY); 
-                   g.drawLine(30, jPanel1.getHeight()/2 - t*13/10 + polozenieY,
-                           jPanel1.getWidth()/2, jPanel1.getHeight()/2 - t*13/10 + polozenieY);
+                    System.out.println(element.maxValue2);
+                        g.drawString("- " + Integer.toString(t), 20, jPanel1.getHeight()/2 - t*13/20 + polozenieY);                                    //oraz oznaczenie "0"    
+                        g.setColor(Color.LIGHT_GRAY); 
+                        g.drawLine(25, jPanel1.getHeight()/2 - t*13/20 + polozenieY,
+                                   jPanel1.getWidth()/2, jPanel1.getHeight()/2 - t*13/20 + polozenieY);                 
          }
+         
+         for(double d = -element.maxValue;d <= element.maxValue; d = d + element.maxValue/6){    //Rysowani pionowych lini dla
+                    g.setColor(Color.BLACK);                                                     //Fazowego
+                   int i = (int) Math.round(d);
+                   if(element.maxValue > 179.0)
+                    g.drawString("_ " + Integer.toString(i), jPanel1.getWidth()/2-2, jPanel1.getHeight()/2 - i*26/30 + polozenieY);                                    //oraz oznaczenie "0"    
+                   else if(element.maxValue < 91.0)
+                    g.drawString("_ " + Integer.toString(i), jPanel1.getWidth()/2-2, jPanel1.getHeight()/2 - i*26/30*2 + polozenieY);    
+         
+          g.setColor(Color.LIGHT_GRAY); 
+                    if(element.maxValue > 179.0)
+                        g.drawLine(jPanel1.getWidth()/2+5, jPanel1.getHeight()/2 - i*26/30 + polozenieY,
+                           jPanel1.getWidth(), jPanel1.getHeight()/2 - i*26/30 + polozenieY);
+                   else if(element.maxValue < 91.0)
+                         g.drawLine(jPanel1.getWidth()/2+5, jPanel1.getHeight()/2 - i*26/30*2 + polozenieY,
+                           jPanel1.getWidth(), jPanel1.getHeight()/2 - i*26/30*2 + polozenieY);
+         }
+         
+         
                 for (int a=1; a <= temp - 1; a++){           
-                    g.setColor(Color.RED);
-                    y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a-1)*(1/element.scaleToBiggest())/2 - polozenieY);
-                    y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a)*(1/element.scaleToBiggest())/2 - polozenieY);
+                    g.setColor(Color.RED);      //Wykres amplitudowy
+                    
+                    y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a-1)*(1/element.maxValue2)*13/40 - polozenieY);
+                    y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * element.jakasNazwaT.get(a)*(1/element.maxValue2)*13/40 - polozenieY);
                     g.drawLine((a-1 + 10)*2, (jPanel1.getHeight()/2) - y1, (a + 10)*2, (jPanel1.getHeight()/2) - y2);
                     if(jCheckBoxAnimacja.isSelected())
                         animuj.Animacja();
                
-                    g.setColor(Color.MAGENTA);
+                    g.setColor(Color.MAGENTA);  //Wykres fazowy
                     y1 = (int) Math.round( 0.45 * jPanel1.getHeight() * 
                             element.jakasNazwaT2.get(a-1) / element.scaleToBiggest() / 2 - polozenieY);
                     y2 = (int) Math.round( 0.45 * jPanel1.getHeight() * 
