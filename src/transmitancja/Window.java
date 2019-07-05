@@ -602,6 +602,7 @@ public class Window extends javax.swing.JFrame {
                 element.pobudzenieTransformation(Double.parseDouble(a0Param.getText()), Double.parseDouble(a1Param.getText()),
                                 Double.parseDouble(b0Param.getText()), Double.parseDouble(b1Param.getText()),
                                 Double.parseDouble(b2Param.getText()), Integer.parseInt(delay.getText()));
+                
                         double y3;
                         y3 =   0.45 * jPanel1.getHeight() * (1/element.scaleToBiggest())/2 ;
                         int temp_os_y = (int)(element.scaleToBiggest() -((element.scaleToBiggest())%4));
