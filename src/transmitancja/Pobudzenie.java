@@ -64,7 +64,7 @@ public class Pobudzenie {
                double m = (a0*b0+(a1*b1-a0*b2)*j*j);
                double temporary = y;
                y =  Math.atan2(l,m)*180/Math.PI;
-               if(temporary - y > 350)
+               if(temporary - y > 180)
                    faza = true;
                if(faza)
                    y = y + 360;

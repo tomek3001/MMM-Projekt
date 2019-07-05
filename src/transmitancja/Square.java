@@ -23,7 +23,7 @@ public class Square {
     List<Double> jakasNazwaT2 = new ArrayList<>();
     List<Double> jakasNazwaT3 = new ArrayList<>();
     double maxValue = 1.0; 
-     
+     boolean faza = false;
      
     public Square(int dane) {
     numberOfSteps = dane;
@@ -83,14 +83,23 @@ public void squareOmegaRe(double a0, double a1,double b0,double b1, double b2){
         }
     }
 public void squareOmegaIm(double a0, double a1,double b0,double b1, double b2,int delay){
-        for(double j = 0.001; j < (numberOfSteps - 1)*100;){
-            y =  Math.atan2(((a1*b0-a0*b1)*j-a1*b2*j*j*j),(a0*b0+(a1*b1-a0*b2)*j*j))*180/Math.PI;
+    for(double j = 0.001; j < (numberOfSteps - 1)*100;){  //Zmienione wartości omega lepiej oddają układy
+               double l = (a1*b0-a0*b1)*j-a1*b2*j*j*j;
+               double m = (a0*b0+(a1*b1-a0*b2)*j*j);
+               double temporary = y;
+               y =  Math.atan2(l,m)*180/Math.PI;
+               if(temporary - y > 180)
+                   faza = true;
+               if(faza)
+                   y = y + 360;
+               System.out.println(y);
             jakasNazwaT2.add(y);
             if(maxValue < Math.abs(y))
                 maxValue = Math.abs(y);
-            j = j * 1.06; 
+            j = j * 1.06;        
         }
-    }
+        faza = false;
+}
 protected double scaleToBiggest(){
        return maxValue;
     }
