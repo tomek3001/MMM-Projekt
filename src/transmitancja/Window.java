@@ -629,10 +629,10 @@ public class Window extends javax.swing.JFrame {
                     g.setColor(Color.BLACK);                                            //Amplitudowego
                     int t = (int) Math.round(i);
                     System.out.println(element.maxValue2);
-                        g.drawString("- " + Integer.toString(t), 20, jPanel1.getHeight()/2 - t*13/20 + polozenieY);                                    //oraz oznaczenie "0"    
+                        g.drawString("- " + Integer.toString(t), 20, jPanel1.getHeight()/2 - t*13/10 + polozenieY);                                    //oraz oznaczenie "0"    
                         g.setColor(Color.LIGHT_GRAY); 
-                        g.drawLine(25, jPanel1.getHeight()/2 - t*13/20 + polozenieY,
-                                   jPanel1.getWidth()/2, jPanel1.getHeight()/2 - t*13/20 + polozenieY);                 
+                        g.drawLine(25, jPanel1.getHeight()/2 - t*13/10 + polozenieY,
+                                   jPanel1.getWidth()/2, jPanel1.getHeight()/2 - t*13/10 + polozenieY);                 
          }
          
          for(double d = -element.maxValue;d <= element.maxValue; d = d + element.maxValue/6){    //Rysowani pionowych lini dla
