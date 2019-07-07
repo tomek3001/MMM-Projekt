@@ -91,10 +91,12 @@ public class Triangle {
                System.out.println(j);
                System.out.println((double)delay/100);
                y =  Math.atan2(l,m)*180/Math.PI - j*((double)delay/100);
-               if(temporary - y > 180)
+               if(Math.abs(temporary - y) > 180)
                    faza = true;
-               if(faza)
+               if(faza && temporary - y > 180)
                    y = y + 360;
+               else if(faza && temporary - y < -180)
+                   y = y - 360;
               // System.out.println(y);
             jakasNazwaT2.add(y);
             if(maxValue < Math.abs(y))

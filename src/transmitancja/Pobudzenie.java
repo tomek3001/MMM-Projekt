@@ -27,7 +27,6 @@ public class Pobudzenie {
         for(int j = 0 ; j <= delay;j++){
             jakasNazwaT.add(0.0);
         }
-
         for(int h = 0; h < numberOfSteps - 1 - delay; h++){
             x = (a0/b2)*jakasNazwa.get(h)/100 - y*b0/b2/100+x;
             y = a1/b2*jakasNazwa.get(h)/100+y*(1-b1/b2/100)+x/100;
@@ -66,10 +65,12 @@ public class Pobudzenie {
                System.out.println(j);
                System.out.println((double)delay/100);
                y =  Math.atan2(l,m)*180/Math.PI - j*((double)delay/100);
-               if(temporary - y > 180)
+               if(Math.abs(temporary - y) > 180)
                    faza = true;
-               if(faza)
+               if(faza && temporary - y > 180)
                    y = y + 360;
+               else if(faza && temporary - y < -180)
+                   y = y - 360;
               // System.out.println(y);
             jakasNazwaT2.add(y);
             if(maxValue < Math.abs(y))

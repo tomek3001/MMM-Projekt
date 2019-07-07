@@ -718,7 +718,7 @@ public class Window extends javax.swing.JFrame {
                  element.pobudzenieOmegaIm(Double.parseDouble(a0Param.getText()), Double.parseDouble(a1Param.getText()),
                                         Double.parseDouble(b0Param.getText()), Double.parseDouble(b1Param.getText()),
                                         Double.parseDouble(b2Param.getText()), Integer.parseInt(delay.getText()));    
-         for(double i = -element.maxValue2 - 20;i <= element.maxValue2+20; i = i + 20){   //Rysowani pionowych lini dla
+         for(double i = -element.maxValue2 - 40;i <= element.maxValue2 + 40; i = i + 20){   //Rysowani pionowych lini dla
                     g.setColor(Color.BLACK);                                            //Amplitudowego
                     int t = (int) Math.round(i);
                   
