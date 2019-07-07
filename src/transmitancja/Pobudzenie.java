@@ -63,8 +63,8 @@ public class Pobudzenie {
                double m = (a0*b0+(a1*b1-a0*b2)*j*j);
                double temporary = y;
                System.out.println(j);
-               System.out.println((double)delay/100);
-               y =  Math.atan2(l,m)*180/Math.PI - j*((double)delay/100);
+               System.out.println((double)delay/1000);
+               y =  Math.atan2(l,m)*180/Math.PI - j*((double)delay/1000);
                if(Math.abs(temporary - y) > 180)
                    faza = true;
                if(faza && temporary - y > 180)
